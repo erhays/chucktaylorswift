@@ -1,0 +1,40 @@
+{#
+    https://chucktaylorswift.com/search
+    Search Results Page
+    Template
+#}
+
+{% extends "_components/base" %}
+
+{% set thisPage = 'Search Results' %}
+{% block main %}
+
+	<main id="panel" role="main" class="slideout-panel">
+		{% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+
+		{% set query = craft.request.getParam('q') %}
+		{% set entries = craft.entries.search(query).order('score') %}
+
+		<section class="search page">
+				<figure class="page-header">
+					<h1>Search Results</h1>
+				</figure>
+				<article>
+				{% if entries|length %}
+    			<p>{{ entries|length }} results:</p>
+
+    			<ul>
+		        {% for entry in entries %}
+		          <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+		        {% endfor %}
+		    	</ul>
+
+				{% else %}
+		    	<p>Your search for “{{ query }}” didn’t return any results.</p>
+				{% endif %}
+			</article>
+		</section>
+	</main>
+{% endblock %}

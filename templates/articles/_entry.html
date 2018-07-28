@@ -1,0 +1,81 @@
+{#
+    https://chucktaylorswift.com/articles/{slug}
+    Article Entry
+    Template
+#}
+
+{% extends '_components/base' %}
+{% import '_components/macros/crumbs.html' as crumbs %}
+{% set thisPage = 'Articles' %}
+{% block main %}
+  <main id="panel" role="main" class="slideout-panel">
+    {% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+
+    {% set time = readTime(entry, false) %}
+    {% set image = entry.articleCover.one() %}
+    <section class="article page">
+      <ul class="crumbs">
+        <li><a href="/" title="Home">Home</a></li>
+        <i class="fas fa-caret-right"></i>
+        <li><a href="/articles" title="All">Articles</a></li>
+        <i class="fas fa-caret-right"></i>
+        <li>{{ entry.title }}</li>
+      </ul>
+      <figure class="full-cover" {% if image %} style="background:url('{{ image.url }}') 100%;{% endif %}">
+        <h1>{{ entry.title }}</h1>
+      </figure>
+      <figcaption class="full-meta">
+        <span>
+          <p class="date">{{ entry.dateCreated | date("F j, Y") }}</p>
+          <p>{{ time.interval('%i min') }} read</p>
+        </span>
+        <span class="share icon">
+          <a href="#" class="share"><i class="far fa-share-square"></i></a>
+        </span>
+        <span class="gallery icon">
+          <a href="/gallery"><i class="fas fa-th-large"></i></a>
+        </span>
+      </figcaption>
+    </div>
+      <article class="full">
+        <p>By {{ entry.author }}</p>
+        <h2>{{ entry.subHeading }}</h2>
+        <span class="body">
+          {{ entry.articleBody }}
+        </span>
+      </article>
+    </section>
+    <media class="lt-box-gallery">
+      <div id="cbox">
+        {% set images = craft.assets().volume('gallery').all() %}
+        {% for image in images %}
+          <a class="chocolat-image" href="{{ image.getUrl() }}" title="{{ image.title }} | {{ entry.on | date("d m Y") }}">
+            <img src="{{ image.getUrl() }}" width="295" height="auto" alt="{{ image.description }}">
+          </a>
+        {% endfor %}
+      </div>
+    </media>
+    <script>
+      $(function(){
+          $('#c-gallery').Chocolat({
+              loop           : true,
+              imageSize     : 'cover',
+              overlayOpacity : 0.9
+          });
+        });
+    </script>
+    {% set tags = entry.tags.all() %}
+      {% if tags %}
+        <caption class="tags">
+          {% nav tag in tags %}
+            <a title="{{ tag.tagName }}" href="{{ tag.url }}">#{{ tag.tagName }}</a>
+          {% endnav %}
+          </caption>
+        {% endif %}
+      </article>
+    </section>
+  </main>
+{% endblock %}
+

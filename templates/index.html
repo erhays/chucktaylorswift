@@ -1,0 +1,90 @@
+{#
+    https://chucktaylorswift.com
+    Home Page
+    Template
+#}
+
+{% extends "_components/base" %}
+
+{% set thisPage = 'Home' %}
+{% block main %}
+{% set entries = craft.entries.section('articles').isFeatured('1').limit(5).all() %}
+
+	<main id="panel" role="main" class="slideout-panel">
+		{% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+
+		<script type="text/javascript">
+
+			var homeSwiper = $(document).ready(function() {
+
+			  var text_swiper = new Swiper('.text-swiper', {
+			    speed: 400,
+			    loop: true,
+			    autoplay: 7000,
+			    parallax: true,
+			    effect: 'fade',
+			  });
+
+			  var hero_swiper = new Swiper('.hero-swiper', {
+			    speed: 400,
+			    loop: true,
+			    navigation: {
+			      nextEl: '.swiper-next',
+			      prevEl: '.swiper-prev',
+			      },
+			      pagination: {
+			        el: '.swiper-dotnav',
+			      },
+			  });
+
+			  text_swiper.controller.control = hero_swiper;
+			  hero_swiper.controller.control = text_swiper;
+
+			});
+
+		</script>
+		<section class="hero">
+				<div class="swiper-container text-swiper">
+					<div class="swiper-wrapper">
+						{% for entry in entries %}
+							<div class="swiper-slide">
+								<div class="container">
+									<a class="swiper-title" data-swiper-parallax="-300" href="{{ entry.url }}">{{ entry.title }}</a>
+									<h2 data-swiper-parallax="-200">{{ entry.artExcerpt }}</h2>
+								</div>
+								<div class="swiper-dot nav"></div>
+								<div class="swiper-nav">
+									<button class="swiper-prev arrow"><img src="/assets/imgs/la-lt.svg"></button>
+									<button class="swiper-next arrow"><img src="/assets/imgs/la-rt.svg"></button>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="swiper-container hero-swiper">
+					<div class="swiper-wrapper">
+						{% for entry in entries %}
+							<div class="swiper-slide">
+								{% set image = entry.articleCover.one() %}
+									<div class="swiper-image" style="background-image: url('{% if image %}{{ image.url }}{% else %}/assets/imgs/default-cover.jpg{% endif %}'); background-size: cover;" alt="">
+									</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+
+
+			</div>
+		</section>
+		<section class="instagram-feed">
+			<div id="instafeed"></div>
+		</section>
+
+		<section class="about">
+			<h1>Chuck Taylor Swift</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</section>
+	</main>
+{% endblock %}

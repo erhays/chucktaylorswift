@@ -1,0 +1,46 @@
+{#
+    https://chucktaylorswift.com/articles/
+    Articles Index
+    Template
+#}
+
+{% extends "_components/base" %}
+{% set thisPage = 'Articles' %}
+{% block main %}
+
+	<main id="panel" role="main" class="slideout-panel">
+		{% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+
+		{% paginate craft.entries.section('articles').limit(5) as pages, entries %}
+		<section class="articles page">
+			<figure class="page-header">
+				<h1>Latest Stories</h1>
+			</figure>
+
+			{% for entry in entries %}
+				<article class="summary">
+					<p>{{ entry.dateCreated | date("d M Y") }}</p>
+					<h2>{{ entry.title }}</h2>
+					<p>{{ entry.slug }}</p>
+					<span class="story-summary">
+						{{ entry.articleBody }}
+					</span>
+				</article>
+				<a href="{{ entry.url }}" title="Full Story">Full Story</a>
+			{% endfor %}
+				<div class="pagination">
+					{% if pages.prevUrl %}
+						<a href="{{ pages.prevUrl }}">Previous</a>
+					{% endif %}
+					<strong>{{ pages.currentPage }}</strong>
+					{% if pages.nextUrl %}
+						<a href="{{ pages.nextUrl }}">Next</a>
+					{% endif %}
+				</div>
+			</section>
+		</main>
+	{% endblock %}
+
+

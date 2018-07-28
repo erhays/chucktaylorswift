@@ -1,0 +1,66 @@
+/* Sidebar background color */
+#global-sidebar {
+    background: #fff;
+    border-right: 2px solid #fafafa;
+}
+
+#global-sidebar a {
+    color: #ff6c61;
+}
+
+/* Header background color */
+#main-container #main #header {
+    background: #fff;
+}
+
+/* H1 tags */
+h1 {
+    color: #ff5d5d;
+}
+
+/* Standard button color */
+.btn.submit {
+    background: #2196f3;
+}
+/* Hover button color */
+.btn.submit:not(.disabled):not(.inactive):hover,
+.btn.submit:not(.disabled):not(.inactive).hover {
+    background: #c0343f;
+}
+/* Active button color */
+.btn.submit:not(.disabled):not(.inactive):active,
+.btn.submit:not(.disabled):not(.inactive).active {
+    background: #E0E0E0;
+}
+
+#global-sidebar #nav li:not(.has-subnav) > a.sel {
+    background: #e0e0e0;
+    color: #2e2e2e;
+    border-color: #fff;
+}
+
+#global-sidebar > a:hover, #global-sidebar *:not(.has-subnav) > a:hover {
+    background: #4e3a3b;
+}
+
+#global-sidebar > a:hover, #global-sidebar > a.active, #global-sidebar > a:active, #global-sidebar *:not(.has-subnav) > a:hover, #global-sidebar *:not(.has-subnav) > a.active, #global-sidebar *:not(.has-subnav) > a:active {
+    background: #d8d8d8;
+    color: #616161;
+}
+
+#global-sidebar > a.active, #global-sidebar > a:active, #global-sidebar *:not(.has-subnav) > a.active, #global-sidebar *:not(.has-subnav) > a:active {
+    background: #d8d8d8;
+    color: #888;
+}
+
+a, a:visited {
+	color: #616161;
+}
+
+#main-container #main #main-content #content-container #content {
+	background: #fff !important;
+}
+
+body.ltr #global-sidebar #nav li a .icon {
+  background: #616161;
+  padding: 4px;

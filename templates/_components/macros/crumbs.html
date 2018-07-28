@@ -1,0 +1,45 @@
+{#
+   Breadcrumbs
+   Macro
+#}
+
+  {% set defaults = {
+    separator: '>'
+  } %}
+
+
+{% macro breadcrumbs(list) %}
+  {% set cList = [] %}
+    {% if cList is iterable %}
+      {% for c in cList %}
+        {% set cLink = '' %}
+        {% if c.title ?? null %}
+          {% set separator = defaults.separator %}
+            {% if loop.last %}
+              {% set separator = '' %}
+            {% endif %}
+          {% if c.link ?? null and c.linked %}
+            {% set cLink %}
+              {% spaceless %}
+                <li class="crumb-link">
+                  <a href="{{ c.link }}" title="{{ c.title }}">{{ c.title }}</a>
+                  {{ separator|raw }}
+                </li>
+              {% endspaceless %}
+            {% endset %}
+          {% else %}
+            {% set cLink = '<li>' ~ c.title ~ separator ~ '</li>' %}
+          {% endif %}
+        {% endif %}
+        {% set cList = cList | merge([cLink]) %}
+      {% endfor %}
+    {% endif %}
+
+    {% set list %}
+      <ul class="crumb-list">
+        {% for cLink in cList %}
+          {{ cLink | raw }}
+        {% endfor %}
+      </ul>
+    {% endset %}
+{% endmacro breadcrumbs %}

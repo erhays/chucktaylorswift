@@ -1,0 +1,31 @@
+{#
+    https://chucktaylorswift.com/culture/{slug}
+    Culture Entry
+    Single Template
+#}
+
+{% extends "_components/base" %}
+{% set thisPage = 'Culture' %}
+{% block main %}
+    <main id="panel" role="main" class="slideout-panel">
+	   {% block aside %}
+            {{ parent() }}
+        {% endblock aside %}
+        {% block search %}
+
+        {% endblock search %}
+		<section class="culture page">
+            <div class="article-header">
+                <h1>{{ entry.title }}</h1>
+                <figure class="full-cover" {% if image %} style="background:url('{{ image.url }}');{% endif %}">
+                    <h2>{{ entry.subHeading }}</h2>
+                    <p>{{ entry.dateCreated | date("d M Y") }} by: {{ entry.author }}</p>
+                </figure>
+            </div>
+            <div class="culture-card">
+                <div class="card-body">
+                </div>
+            </div>
+        </section>
+	</main>
+{% endblock main %}

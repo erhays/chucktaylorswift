@@ -1,0 +1,29 @@
+{#
+    https://chucktaylorswift.com/search
+    Search Query Page
+    Template
+#}
+
+{% extends "_components/base" %}
+
+{% set thisPage = 'Search' %}
+{% block main %}
+
+	<main id="panel" role="main" class="slideout-panel">
+		{% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+
+		<section class="search page">
+				<figure class="page-header">
+					<form action="{{ url('/search/results') }}">
+    				<input type="search" name="q" placeholder="Search">
+    				<input type="submit" value="Go">
+					</form>
+				</figure>
+				<article>
+
+				</article>
+		</section>
+	</main>
+{% endblock %}

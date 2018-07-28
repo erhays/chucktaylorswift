@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Send would-be 404 requests to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+
+    # redirect to tumblr
+ 		# RewriteCond %{HTTP_HOST} ^blog.chucktaylorswift.com [NC]
+ 		# RewriteRule ^/(.*)$ http://66.6.44.4$1 [P,L]
+</IfModule>
