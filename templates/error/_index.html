@@ -1,22 +1,19 @@
 {#
-    https://chucktaylorswift.com/culture
-    Culture Section
-    Section Index
+    https://chucktaylorswift.com/error
+    Error Page
+    Single Template
 #}
 
-{% extends "_components/base" %}
-{% set thisPage = 'Culture' %}
+{% extends "_partials/base" %}
+{% set thisPage = 'Error' %}
 {% block main %}
-	{% set entries = craft.entries.section('culture').all() %}
 	<main id="panel" role="main" class="slideout-panel">
-		{% block aside %}
-      {{ parent() }}
-    {% endblock aside %}
-    {% block search %}
+	   {% block aside %}
+        {{ parent() }}
+       {% endblock aside %}
 
-    {% endblock search %}
-		<section class="culture page">
+       <section class="error page">
 
-		</section>
+	   </section>
 	</main>
 {% endblock main %}

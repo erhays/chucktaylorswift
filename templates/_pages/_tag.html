@@ -1,0 +1,35 @@
+{#
+    https://chucktaylorswift.com/tags
+    Tag Page
+    Template
+#}
+
+{% extends "_partials/base" %}
+{% set thisPage = '{{ entry.title }}' %}
+{% block main %}
+	{% set tag = craft.tags.title(tag).first() %}
+	{% if not tag %}
+	    {% exit 404 %}
+	{% endif %}
+	<main id="panel" role="main" class="slideout-panel">
+		<a class="site-brand" href="/" title="{{ siteName }}">
+			<img src="/assets/imgs/cts-bloc=lt.png">
+		</a>
+		{% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+    <section class="tag page">
+    	<h1>Tagged with “{{ tag.title }}”</h1>
+			{% set entries = craft.entries.relatedTo(tag).order('title') %}
+			{% if entries | length %}
+			  <ul>
+        	{% for entry in entries %}
+          	<li>{{ entry.getLink() }}</li>
+        	{% endfor %}
+			  </ul>
+			{% else %}
+			  <p>No entries could be found with that tag.</p>
+			{% endif %}
+    </section>
+  </main>
+{% endblock %}

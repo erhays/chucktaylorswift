@@ -1,0 +1,201 @@
+{#
+    https://chucktaylorswift.com/
+    Base Template
+#}
+
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      {% block head %}
+        <meta charset="utf-8">
+        <meta name="description" content="Music meets culture.">
+        <meta content="Chuck Taylor Swift" property="og:title">
+        <meta content="Music meets culture." property="og:description">
+        <meta content="summary" name="twitter:card">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta content="Erik Hays" name="author">
+        <link rel="canonical" href="https://chucktaylorswift.com">
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "https://chucktaylorswift.com",
+            "logo": "http://chucktaylorswift.com/assets/imgs/cts-brand.png"
+          }
+        </script>
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- SLIDEOUT.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+        <!-- WEBFONT PRELOADER -->
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <!--SWIPER.JS-->
+        <script src="/assets/js/swiper.min.js"></script>
+        <!-- CHOCOLAT JS -->
+        <script src="/assets/js/jquery.chocolat.js"></script>
+        <!-- CHOCOLAT CSS -->
+        <link rel="stylesheet" href="/assets/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+        <!-- AOS -->
+        <script src="/assets/js/aos.js"></script>
+        <link href="/assets/css/aos.css" rel="stylesheet">
+        <!-- ALGOLIA SRCH -->
+        <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
+        <script src="/assets/js/app.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.css">
+        <!--INITS-->
+        <script>
+          $(document).ready(function() {
+              //Web Font Preloader
+              WebFont.load({
+                google: {
+                  families: ['Abril Fatface', 'Karla', 'Abel', 'Noto Serif']
+                }
+              });
+              //Slideout.js
+              var slideout = new Slideout({
+                'panel': document.getElementById('panel'),
+                'menu': document.getElementById('menu'),
+                'padding': 155,
+                'tolerance': 70
+              });
+              // Toggle button
+              document.querySelector('.toggle-nav')
+                .addEventListener('click', function() {
+                  slideout.toggle();
+              });
+              // close slideout on page leave
+              var e_href = {};
+              function resume(){
+                window.location.href = e_href;
+              }
+              $('nav a').click('click', function(e) {
+                e_href = e.currentTarget.href;
+                e.preventDefault();
+                slideout.toggle();
+                resume();
+              });
+              // Chocolat
+              $('.chocolat-parent').Chocolat();
+              // AOS
+              AOS.init({
+                easing: 'ease-in-out',
+                once: true
+              });
+          });
+        </script>
+        <!-- INSTAFEED.JS -->
+        <script src="/assets/js/instafeed.min.js"></script>
+        <!--FA ICONS-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/css/cts.css">
+
+        <style type="text/css">
+          {% if thisPage == 'Articles' %}
+            .brand-logo {
+              display: none;
+              opacity: 0;
+              visibility: hidden;
+            }
+          {% endif %}
+        </style>
+        <link rel="stylesheet" href="/assets/css/swiper.min.css">
+        <!-- GST -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123023138-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-123023138-1');
+        </script>
+        <title>CTS — {{ thisPage }}</title>
+      {% endblock head %}
+    </head>
+    <body class="{% if bodyClass is defined %}{{ bodyClass }}{% else %} {% endif %}">
+    {% block body %}
+      {% block nav %}
+        <nav id="menu" class="slideout-menu" role="navigation" aria-label="main navigation">
+          <ul>
+              <li class="{% if thisPage == 'Home' %}active{% endif %}">
+                <a href="/" title="Home">
+                  Home
+                </a>
+              </li>
+              <li class="{% if thisPage == 'Articles' %}active{% endif %}">
+                <a href="/articles" title="Recent Articles">
+                  Articles
+                </a>
+              </li>
+              <li class="{% if thisPage == 'Live' %}active{% endif %}">
+                <a href="/live" title="Media Galleries">
+                  Live!
+                </a>
+              </li>
+              <li class="{% if thisPage == 'Blog' %}active{% endif %}">
+                <a href="/blog" title="Tumblr">
+                  Blog
+                </a>
+              </li>
+              <li class="{% if thisPage == 'About' %}active{% endif %}">
+                <a href="/about" title="Get In Touch!">
+                  About
+                </a>
+              </li>
+          </ul>
+        </nav>
+      {% endblock nav %}
+      {% block main %}
+
+        {% block aside %}
+          <header>
+            <button class="toggle-nav">☰</button>
+            <ul class="social-aside">
+              <a href="#" target="_blank"><li><i class="fab fa-twitter"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-spotify"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-tumblr"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-lastfm"></i></li></a>
+              <a href="/admin"><li class="login"><i class="fas fa-sign-in-alt"></i></li></a>
+            </ul>
+          </header>
+        {% endblock aside %}
+
+      {% endblock main %}
+
+      {% block disqus %}
+      {% endblock disqus %}
+
+      {% block footer %}
+      <footer role="menu">
+        <div class="container">
+
+          {% set menu = craft.olivemenus.getMenuHTML('social') %}
+
+          {% set menu = craft.olivemenus.getMenuHTML('links') %}
+
+          {% set menu = craft.olivemenus.getMenuHTML('more') %}
+
+          <div class="menu">
+            <ul>
+              <li>
+                <a href="/" title="{{ siteName }}"><img class="footer-icon" src="/assets/imgs/black-vinyl.png"></a>
+              </li>
+              <li>
+                <p class="legal"><i class="far fa-copyright"></i> 2018.</p>
+                <p class="legal">Chuck Taylor Swift</p>
+            </li>
+          </ul>
+
+        </div>
+      </footer>
+      <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+      <![endif]-->
+      {% endblock footer %}
+
+    <script id="dsq-count-scr" src="//chucktaylorswift.disqus.com/count.js" async></script>
+    {% endblock body %}
+  </body>
+</html>
+
+

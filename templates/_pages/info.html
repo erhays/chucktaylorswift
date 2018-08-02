@@ -1,0 +1,30 @@
+{#
+    https://chucktaylorswift.com/info
+    Info Page
+    Template
+#}
+
+{% extends '_partials/base' %}
+{% import '_partials/macros/crumbs.html' as crumbs %}
+{% set thisPage = 'Info' %}
+{% set page = craft.entries.section('pages').slug('info').one() %}
+{% block main %}
+  <main id="panel" role="main" class="slideout-panel">
+		{% block aside %}
+      {{ parent() }}
+    {% endblock aside %}
+		<section class="page info">
+			<ul class="crumbs">
+        <li><a href="/" title="Home">Home</a></li>
+        <i class="fas fa-angle-right"></i>
+        <li>{{ thisPage }}</li>
+      </ul>
+      <div class="page-header">
+        <h1>{{ page.title }}</h1>
+      </div>
+      <div class="page-content">
+      	(content)
+      </div>
+		</section>
+	</main>
+{% endblock %}

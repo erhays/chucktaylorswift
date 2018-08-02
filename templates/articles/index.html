@@ -4,43 +4,61 @@
     Template
 #}
 
-{% extends "_components/base" %}
+{% extends "_partials/base" %}
 {% set thisPage = 'Articles' %}
+{% set page = craft.entries.section('pages').slug('articles').one() %}
 {% block main %}
-
 	<main id="panel" role="main" class="slideout-panel">
 		{% block aside %}
       {{ parent() }}
     {% endblock aside %}
 
-		{% paginate craft.entries.section('articles').limit(5) as pages, entries %}
 		<section class="articles page">
-			<figure class="page-header">
-				<h1>Latest Stories</h1>
-			</figure>
-
-			{% for entry in entries %}
-				<article class="summary">
-					<p>{{ entry.dateCreated | date("d M Y") }}</p>
+			<ul class="crumbs">
+        <li><a href="/" title="Home">Home</a></li>
+        <i class="fas fa-angle-right"></i>
+        <li>Articles</li>
+      </ul>
+			<div class="page-header">
+				<h1>Most Recent</h1>
+			</div>
+		</div>
+		{% paginate craft.entries.section('articles').limit(7) as pageInfo, pageEntries %}
+			{% for entry in pageEntries %}
+				{% set time = readTime(entry, false) %}
+    		{% set image = entry.articleCover.one() %}
+				<article class="summary-card">
 					<h2>{{ entry.title }}</h2>
-					<p>{{ entry.slug }}</p>
+					<p class="date">{{ entry.dateCreated | date("F j, Y") }}</p>
+          <h2>{{ entry.subHeading }}</h2>
+          <p>By {{ entry.author }}</p>
 					<span class="story-summary">
 						{{ entry.articleBody }}
 					</span>
+					<a href="{{ entry.url }}" title="Read More">{{ time.interval('%i min') }} read</a>
 				</article>
-				<a href="{{ entry.url }}" title="Full Story">Full Story</a>
+				<figure class="summary-cover" {% if image %}style="background:url('{{image.url}}');{% endif %}">
+					{% set tags = entry.tags.all() %}
+		      {% if tags %}
+		        <figcaption class="tags">
+		          {% nav tag in tags %}
+		            <a title="{{ tag.tagName }}" href="{{ tag.url }}">#{{ tag.tagName }}</a>
+		          {% endnav %}
+		        </figcaption>
+		      {% endif %}
+		    </figure>
 			{% endfor %}
-				<div class="pagination">
-					{% if pages.prevUrl %}
-						<a href="{{ pages.prevUrl }}">Previous</a>
-					{% endif %}
-					<strong>{{ pages.currentPage }}</strong>
-					{% if pages.nextUrl %}
-						<a href="{{ pages.nextUrl }}">Next</a>
-					{% endif %}
-				</div>
-			</section>
-		</main>
-	{% endblock %}
+			<div class="pagination">
+				{% if pageInfo.prevUrl %}
+					<a href="{{ pageInfo.prevUrl }}">Previous</a>
+				{% endif %}
+				<strong>{{ pageInfo.currentPage }}</strong>
+				{% if pageInfo.nextUrl %}
+					<a href="{{ pageInfo.nextUrl }}">Next</a>
+				{% endif %}
+			</div>
+		</section>
+	</main>
+{% endblock %}
 
 

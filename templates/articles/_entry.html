@@ -4,9 +4,10 @@
     Template
 #}
 
-{% extends '_components/base' %}
-{% import '_components/macros/crumbs.html' as crumbs %}
-{% set thisPage = 'Articles' %}
+{% extends '_partials/base' %}
+{% import '_partials/macros/crumbs.html' as crumbs %}
+{% set thisPage = 'Article' %}
+{% set page = craft.entries.section('pages').slug('article').one() %}
 {% block main %}
   <main id="panel" role="main" class="slideout-panel">
     {% block aside %}
@@ -18,9 +19,9 @@
     <section class="article page">
       <ul class="crumbs">
         <li><a href="/" title="Home">Home</a></li>
-        <i class="fas fa-caret-right"></i>
+        <i class="fas fa-angle-right"></i>
         <li><a href="/articles" title="All">Articles</a></li>
-        <i class="fas fa-caret-right"></i>
+        <i class="fas fa-angle-right"></i>
         <li>{{ entry.title }}</li>
       </ul>
       <figure class="full-cover" {% if image %} style="background:url('{{ image.url }}') 100%;{% endif %}">
@@ -46,35 +47,37 @@
           {{ entry.articleBody }}
         </span>
       </article>
+    {% if entry.tags | length %}
+      <caption class="tags">
+        <ul>
+          {% for tag in entry.tags %}
+            <li>
+              <a href="{{ siteUrl }}tags/{{ tag.title | url_encode }}">{{ tag.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </caption>
+    {% endif %}
     </section>
-    <media class="lt-box-gallery">
-      <div id="cbox">
-        {% set images = craft.assets().volume('gallery').all() %}
-        {% for image in images %}
-          <a class="chocolat-image" href="{{ image.getUrl() }}" title="{{ image.title }} | {{ entry.on | date("d m Y") }}">
-            <img src="{{ image.getUrl() }}" width="295" height="auto" alt="{{ image.description }}">
-          </a>
-        {% endfor %}
-      </div>
-    </media>
-    <script>
-      $(function(){
-          $('#c-gallery').Chocolat({
-              loop           : true,
-              imageSize     : 'cover',
-              overlayOpacity : 0.9
-          });
-        });
-    </script>
-    {% set tags = entry.tags.all() %}
-      {% if tags %}
-        <caption class="tags">
-          {% nav tag in tags %}
-            <a title="{{ tag.tagName }}" href="{{ tag.url }}">#{{ tag.tagName }}</a>
-          {% endnav %}
-          </caption>
-        {% endif %}
-      </article>
+    <section class="disqus-comments">
+    {% block disqus %}
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          var disqus_shortname = 'chucktaylorswift';
+          this.page.url = '{{ entry.url }}';
+          var disqus_identifier = 'blog-{{ entry.id }}';
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chucktaylorswift.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {% endblock disqus %}
     </section>
   </main>
 {% endblock %}

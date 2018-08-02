@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "493470867cbb0ec1438584af7dbaaa7a",
+    "content-hash": "cadf3eeb8f79e415b6abb8a15abaa365",
     "packages": [
         {
             "name": "24hoursmedia-craftcms/twig-works-image",
@@ -65,16 +65,16 @@
         },
         {
             "name": "aelvan/imager",
-            "version": "v2.0.2",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aelvan/Imager-Craft.git",
-                "reference": "703d82fb9f5f43b0bbb4a84b36b211f474c8fc6e"
+                "reference": "cd22264e52c926dbc535e83ff0cc760c62ce184a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/703d82fb9f5f43b0bbb4a84b36b211f474c8fc6e",
-                "reference": "703d82fb9f5f43b0bbb4a84b36b211f474c8fc6e",
+                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/cd22264e52c926dbc535e83ff0cc760c62ce184a",
+                "reference": "cd22264e52c926dbc535e83ff0cc760c62ce184a",
                 "shasum": ""
             },
             "require": {
@@ -82,10 +82,11 @@
                 "craftcms/cms": "^3.0.0-RC10",
                 "google/cloud": "~0.20",
                 "imageoptim/imageoptim": "^1.3",
-                "imgix/imgix-php": "^1.1.0",
+                "imgix/imgix-php": "^2.1.0",
                 "kraken-io/kraken-php": "^1.2",
                 "ksubileau/color-thief-php": "^1.3.1",
                 "mikehaertl/php-shellcommand": "^1.2",
+                "ssnepenthe/color-utils": "~0.4",
                 "tinify/tinify": ">=1.1.1"
             },
             "type": "craft-plugin",
@@ -129,7 +130,7 @@
                 "docs": "https://github.com/aelvan/Imager-Craft/blob/craft3/README.md",
                 "issues": "https://github.com/aelvan/Imager-Craft/issues"
             },
-            "time": "2018-07-13T14:33:34+00:00"
+            "time": "2018-07-28T17:40:15+00:00"
         },
         {
             "name": "aelvan/stamp",
@@ -188,6 +189,60 @@
             "time": "2017-08-11T19:08:58+00:00"
         },
         {
+            "name": "albertcht/invisible-recaptcha",
+            "version": "v1.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/albertcht/invisible-recaptcha.git",
+                "reference": "6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/albertcht/invisible-recaptcha/zipball/6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6",
+                "reference": "6a34a1ce6cd4ae8216d07ee5ef8fb2a201774de6",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "php": "^5.6.4 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AlbertCht\\InvisibleReCaptcha\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Albert Chen",
+                    "homepage": "https://www.albert-chen.com"
+                }
+            ],
+            "description": "Invisible reCAPTCHA For Laravel.",
+            "keywords": [
+                "captcha",
+                "invisible",
+                "invisible-recaptcha",
+                "laravel",
+                "laravel5",
+                "no-captcha",
+                "php",
+                "recaptcha"
+            ],
+            "time": "2018-05-15T01:31:25+00:00"
+        },
+        {
             "name": "algolia/algoliasearch-client-php",
             "version": "1.27.0",
             "source": {
@@ -234,17 +289,61 @@
             "time": "2018-06-19T05:59:53+00:00"
         },
         {
-            "name": "aws/aws-sdk-php",
-            "version": "3.63.4",
+            "name": "auth0/auth0-php",
+            "version": "5.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "255574137faa6cb4204b6c58df329dafd297df0a"
+                "url": "https://github.com/auth0/auth0-PHP.git",
+                "reference": "c8aa6ea5dce87d112f3ff62d2b379202dd0bd217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/255574137faa6cb4204b6c58df329dafd297df0a",
-                "reference": "255574137faa6cb4204b6c58df329dafd297df0a",
+                "url": "https://api.github.com/repos/auth0/auth0-PHP/zipball/c8aa6ea5dce87d112f3ff62d2b379202dd0bd217",
+                "reference": "c8aa6ea5dce87d112f3ff62d2b379202dd0bd217",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "firebase/php-jwt": "^5.0",
+                "guzzlehttp/guzzle": "~6.0",
+                "php": "^5.5 || ^7.0"
+            },
+            "require-dev": {
+                "josegonzalez/dotenv": "^2.0",
+                "phpunit/phpunit": "^4.8 || ^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Auth0\\SDK\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Auth0",
+                    "email": "support@auth0.com",
+                    "homepage": "http://www.auth0.com/"
+                }
+            ],
+            "description": "Auth0 PHP SDK.",
+            "time": "2018-06-13T18:07:09+00:00"
+        },
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.64.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "3bd2c9b52a4a27f6e914cc77e75144a2bb5b2aa2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3bd2c9b52a4a27f6e914cc77e75144a2bb5b2aa2",
+                "reference": "3bd2c9b52a4a27f6e914cc77e75144a2bb5b2aa2",
                 "shasum": ""
             },
             "require": {
@@ -257,6 +356,17 @@
                 "guzzlehttp/psr7": "^1.4.1",
                 "mtdowling/jmespath.php": "~2.2",
                 "php": ">=5.5"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "nette/neon": "^2.3",
+                "phpunit/phpunit": "^4.8.35|^5.4.3",
+                "psr/cache": "^1.0"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -278,6 +388,7 @@
                     "src/functions.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -299,7 +410,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-07-19T19:09:51+00:00"
+            "time": "2018-07-31T19:57:00+00:00"
         },
         {
             "name": "barrelstrength/sprout-base",
@@ -400,6 +511,113 @@
                 "rss": "https://github.com/barrelstrength/sprout-lists/commits/v2.atom"
             },
             "time": "2018-07-26T21:46:24+00:00"
+        },
+        {
+            "name": "biglotteryfund/preview-button",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/biglotteryfund/craft-preview-button.git",
+                "reference": "42388ae0eaaa6008640e150f67047e13ca9655e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biglotteryfund/craft-preview-button/zipball/42388ae0eaaa6008640e150f67047e13ca9655e1",
+                "reference": "42388ae0eaaa6008640e150f67047e13ca9655e1",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Preview Button",
+                "handle": "preview-button",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/biglotteryfund/craft-preview-button/master/CHANGELOG.md",
+                "class": "biglotteryfund\\previewbutton\\PreviewButton"
+            },
+            "autoload": {
+                "psr-4": {
+                    "biglotteryfund\\previewbutton\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Big Lottery Fund",
+                    "homepage": "https://www.github.com/biglotteryfund"
+                }
+            ],
+            "description": "Adds a preview button to the entry editor screen to allow previewing of draft/revision entries",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "preview button"
+            ],
+            "support": {
+                "docs": "https://github.com/biglotteryfund/craft-preview-button/blob/master/README.md",
+                "issues": "https://github.com/biglotteryfund/craft-preview-button/issues"
+            },
+            "time": "2018-03-07T12:58:22+00:00"
+        },
+        {
+            "name": "carlcs/craft-diywidget",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/carlcs/craft-diywidget.git",
+                "reference": "953a417859ad46629e212ac1f267ea2e04e1f40c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/carlcs/craft-diywidget/zipball/953a417859ad46629e212ac1f267ea2e04e1f40c",
+                "reference": "953a417859ad46629e212ac1f267ea2e04e1f40c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Do It Yourself widget",
+                "handle": "diy-widget",
+                "changelogUrl": "https://github.com/carlcs/craft-diywidget/raw/v2/CHANGELOG.md",
+                "downloadUrl": "https://github.com/carlcs/craft-diywidget/archive/v2.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "carlcs\\diywidget\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "carlcs",
+                    "homepage": "https://github.com/carlcs"
+                }
+            ],
+            "description": "Do It Yourself widget for Craft CMS",
+            "keywords": [
+                "craftcms",
+                "diy",
+                "widget"
+            ],
+            "support": {
+                "issues": "https://github.com/carlcs/craft-diywidget/issues?state=open",
+                "source": "https://github.com/carlcs/craft-diywidget",
+                "docs": "https://github.com/carlcs/craft-diywidget",
+                "rss": "https://github.com/carlcs/craft-diywidget/commits/v2.atom"
+            },
+            "time": "2018-05-29T17:20:24+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -518,6 +736,163 @@
                 "email": "support@charliedev.com"
             },
             "time": "2017-12-13T16:38:58+00:00"
+        },
+        {
+            "name": "charliedev/element-map",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/charliedevelopment/craft3-element-map.git",
+                "reference": "9634af7f862fccd334376b81f465fa9242cde89a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/charliedevelopment/craft3-element-map/zipball/9634af7f862fccd334376b81f465fa9242cde89a",
+                "reference": "9634af7f862fccd334376b81f465fa9242cde89a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Element Map",
+                "handle": "element-map",
+                "changelogUrl": "https://raw.githubusercontent.com/charliedevelopment/craft3-element-map/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/charliedevelopment/craft3-element-map/archive/master.zip",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "class": "charliedev\\elementmap\\ElementMap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "charliedev\\elementmap\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Charlie Development",
+                    "email": "support@charliedev.com",
+                    "homepage": "http://charliedev.com/"
+                }
+            ],
+            "description": "Simple visualization panel that lists related elements in their associated editors.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craftcms",
+                "element",
+                "widget"
+            ],
+            "support": {
+                "issues": "https://github.com/charliedevelopment/craft3-element-map/issues?state=open",
+                "source": "https://github.com/charliedevelopment/craft3-element-map",
+                "email": "support@charliedev.com"
+            },
+            "time": "2018-07-20T15:39:43+00:00"
+        },
+        {
+            "name": "charliedev/section-field",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/charliedevelopment/craft3-section-field.git",
+                "reference": "001cbdac5c7bbed50c4f80827b2099538452e27a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/charliedevelopment/craft3-section-field/zipball/001cbdac5c7bbed50c4f80827b2099538452e27a",
+                "reference": "001cbdac5c7bbed50c4f80827b2099538452e27a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Section Field",
+                "handle": "section-field",
+                "changelogUrl": "https://raw.githubusercontent.com/charliedevelopment/craft3-section-field/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/charliedevelopment/craft3-section-field/archive/master.zip",
+                "schemaVersion": "0.0.1",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "class": "charliedev\\sectionfield\\Section"
+            },
+            "autoload": {
+                "psr-4": {
+                    "charliedev\\sectionfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Charlie Development",
+                    "email": "support@charliedev.com",
+                    "homepage": "http://charliedev.com/"
+                }
+            ],
+            "description": "Field type that allows the selection of Craft sections.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craftcms",
+                "field",
+                "section"
+            ],
+            "support": {
+                "issues": "https://github.com/charliedevelopment/craft3-section-field/issues?state=open",
+                "source": "https://github.com/charliedevelopment/craft3-section-field",
+                "email": "support@charliedev.com"
+            },
+            "time": "2018-01-31T20:00:29+00:00"
+        },
+        {
+            "name": "clubstudioltd/craft-asset-rev",
+            "version": "6.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clubstudioltd/craft-asset-rev.git",
+                "reference": "49113ac16d5f9ff956bfccc15da0031e72f56249"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clubstudioltd/craft-asset-rev/zipball/49113ac16d5f9ff956bfccc15da0031e72f56249",
+                "reference": "49113ac16d5f9ff956bfccc15da0031e72f56249",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.29"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Asset Rev",
+                "handle": "assetrev",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://github.com/clubstudioltd/craft-asset-rev/blob/master/CHANGELOG.md",
+                "documentationUrl": "https://github.com/clubstudioltd/craft-asset-rev",
+                "downloadUrl": "https://github.com/clubstudioltd/craft-asset-rev/archive/v6.zip",
+                "developer": "Club Studio Ltd",
+                "developerUrl": "https://clubstudio.co.uk",
+                "class": "club\\assetrev\\AssetRev"
+            },
+            "autoload": {
+                "psr-4": {
+                    "club\\assetrev\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A plugin to aid cache-busting in Craft 3",
+            "time": "2018-07-20T13:17:13+00:00"
         },
         {
             "name": "commerceguys/addressing",
@@ -991,16 +1366,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.17.1",
+            "version": "3.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "7619e6fd236dfdbbbbcc0006113c6796dd7d95ed"
+                "reference": "d547e55fb9022bfa08e92cf6b194589c7fa101a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/7619e6fd236dfdbbbbcc0006113c6796dd7d95ed",
-                "reference": "7619e6fd236dfdbbbbcc0006113c6796dd7d95ed",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/d547e55fb9022bfa08e92cf6b194589c7fa101a4",
+                "reference": "d547e55fb9022bfa08e92cf6b194589c7fa101a4",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1386,7 @@
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "danielstjules/stringy": "^3.1.0",
                 "elvanto/litemoji": "^1.3.1",
-                "enshrined/svg-sanitize": "~0.8.2",
+                "enshrined/svg-sanitize": "~0.9.0",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-json": "*",
@@ -1071,7 +1446,65 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-07-24T20:54:02+00:00"
+            "time": "2018-07-31T18:57:08+00:00"
+        },
+        {
+            "name": "craftcms/contact-form",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/contact-form.git",
+                "reference": "8e6d41d68736b955a324e7dc34790bbc7f419a55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/8e6d41d68736b955a324e7dc34790bbc7f419a55",
+                "reference": "8e6d41d68736b955a324e7dc34790bbc7f419a55",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC11"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Contact Form",
+                "handle": "contact-form",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/contact-form/v2/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/contact-form/archive/v2.zip",
+                "components": {
+                    "mailer": "craft\\contactform\\Mailer"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\contactform\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Add a simple contact form to your Craft CMS site",
+            "keywords": [
+                "cms",
+                "contact",
+                "craftcms",
+                "form",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/contact-form/issues?state=open",
+                "source": "https://github.com/craftcms/contact-form",
+                "docs": "https://github.com/craftcms/contact-form",
+                "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
+            },
+            "time": "2018-07-19T18:09:16+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -1516,6 +1949,69 @@
             "time": "2017-01-03T10:49:41+00:00"
         },
         {
+            "name": "doctrine/inflector",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string"
+            ],
+            "time": "2017-07-22T12:18:28+00:00"
+        },
+        {
             "name": "doctrine/lexer",
             "version": "v1.0.1",
             "source": {
@@ -1691,6 +2187,185 @@
             "time": "2018-07-04T20:35:01+00:00"
         },
         {
+            "name": "dolphiq/sitemap",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dolphiq/craft3-plugin-sitemap.git",
+                "reference": "2cf2341e10710fb54c4decfcdc02bc90e7423553"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dolphiq/craft3-plugin-sitemap/zipball/2cf2341e10710fb54c4decfcdc02bc90e7423553",
+                "reference": "2cf2341e10710fb54c4decfcdc02bc90e7423553",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC11",
+                "jaybizzle/crawler-detect": "1.*"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "XML Sitemap",
+                "handle": "sitemap",
+                "schemaVersion": "1.0.2",
+                "developer": "Dolphiq",
+                "developerUrl": "https://dolphiq.nl/",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "components": {
+                    "sitemapService": "dolphiq\\sitemap\\services\\SitemapService"
+                },
+                "documentationUrl": "https://github.com/Dolphiq/craft3-plugin-sitemap/blob/master/README.md",
+                "changelogUrl": "https://github.com/Dolphiq/craft3-plugin-sitemap/blob/master/CHANGELOG.md",
+                "class": "dolphiq\\sitemap\\Sitemap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dolphiq\\sitemap\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dolphiq",
+                    "email": "info@dolphiq.nl",
+                    "homepage": "https://dolphiq.nl/"
+                }
+            ],
+            "description": "Craft 3 plugin that provides an easy way to provide and manage a XML sitemap for search engines like Google and Bing",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "seo",
+                "sitemap",
+                "sitemap.xml",
+                "webmaster tools"
+            ],
+            "time": "2018-02-21T22:58:12+00:00"
+        },
+        {
+            "name": "dolphiq/titleentriesfield",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dolphiq/craft3-plugin-title-entries-field.git",
+                "reference": "80d1e6901d7bd51bcd2f44a7621eca1294931a9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dolphiq/craft3-plugin-title-entries-field/zipball/80d1e6901d7bd51bcd2f44a7621eca1294931a9f",
+                "reference": "80d1e6901d7bd51bcd2f44a7621eca1294931a9f",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Title Entries Field",
+                "handle": "linkfield",
+                "schemaVersion": "1.0.0",
+                "developer": "Dolphiq",
+                "developerUrl": "https://dolphiq.nl/",
+                "description": "Offers users a field type with an easy way to set a different title for the relation than the related page title. Useful in menus, submenus or related lists if you are linking to other content but want to use shorter or different titles in the lists.",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/Dolphiq/craft3-plugin-title-entries-field/blob/master/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/Dolphiq/craft3-plugin-title-entries-field/master/CHANGELOG.md",
+                "class": "dolphiq\\titleentriesfield\\TitleEntriesFieldPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dolphiq\\titleentriesfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dolphiq",
+                    "email": "info@dolphiq.nl",
+                    "homepage": "https://dolphiq.nl/"
+                }
+            ],
+            "description": "Offers users a field type with an easy way to set a different title for the relation than the related page title. Useful in menus, submenus or related lists if you are linking to other content but want to use shorter or different titles in the lists.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craft3",
+                "craftcms",
+                "entry",
+                "item",
+                "link",
+                "link",
+                "linkfield",
+                "menu"
+            ],
+            "time": "2018-03-25T00:13:47+00:00"
+        },
+        {
+            "name": "doublesecretagency/craft-cpbodyclasses",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doublesecretagency/craft-cpbodyclasses.git",
+                "reference": "ca9104b42ce74a5d5ce3852d7f2d668bc0118f38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-cpbodyclasses/zipball/ca9104b42ce74a5d5ce3852d7f2d668bc0118f38",
+                "reference": "ca9104b42ce74a5d5ce3852d7f2d668bc0118f38",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Control Panel Body Classes",
+                "handle": "cp-body-classes",
+                "schemaVersion": "2.0.0",
+                "changelogUrl": "https://raw.githubusercontent.com/doublesecretagency/craft-cpbodyclasses/v2/CHANGELOG.md",
+                "class": "doublesecretagency\\cpbodyclasses\\CpBodyClasses"
+            },
+            "autoload": {
+                "psr-4": {
+                    "doublesecretagency\\cpbodyclasses\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Double Secret Agency",
+                    "homepage": "https://www.doublesecretagency.com/plugins"
+                }
+            ],
+            "description": "Adds special classes to the Control Panel's <body> tag.",
+            "keywords": [
+                "cms",
+                "cp-body-classes",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "css",
+                "javascript"
+            ],
+            "support": {
+                "docs": "https://github.com/doublesecretagency/craft-cpbodyclasses/blob/v2/README.md",
+                "issues": "https://github.com/doublesecretagency/craft-cpbodyclasses/issues"
+            },
+            "time": "2018-05-11T06:03:22+00:00"
+        },
+        {
             "name": "doublesecretagency/craft-cpcss",
             "version": "2.1.0",
             "source": {
@@ -1743,6 +2418,60 @@
                 "issues": "https://github.com/doublesecretagency/craft-cpcss/issues"
             },
             "time": "2018-01-01T08:04:16+00:00"
+        },
+        {
+            "name": "doublesecretagency/craft-matrixcolors",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doublesecretagency/craft-matrixcolors.git",
+                "reference": "41ff0700e65a83ac423a6619f84bad879c6f9e7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-matrixcolors/zipball/41ff0700e65a83ac423a6619f84bad879c6f9e7c",
+                "reference": "41ff0700e65a83ac423a6619f84bad879c6f9e7c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Matrix Colors",
+                "handle": "matrix-colors",
+                "schemaVersion": "2.0.0",
+                "changelogUrl": "https://raw.githubusercontent.com/doublesecretagency/craft-matrixcolors/v2/CHANGELOG.md",
+                "class": "doublesecretagency\\matrixcolors\\MatrixColors"
+            },
+            "autoload": {
+                "psr-4": {
+                    "doublesecretagency\\matrixcolors\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Double Secret Agency",
+                    "homepage": "https://www.doublesecretagency.com/plugins"
+                }
+            ],
+            "description": "Identify your matrix blocks by giving each type a different color.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "matrix",
+                "matrix-colors"
+            ],
+            "support": {
+                "docs": "https://github.com/doublesecretagency/craft-matrixcolors/blob/v2/README.md",
+                "issues": "https://github.com/doublesecretagency/craft-matrixcolors/issues"
+            },
+            "time": "2017-12-31T05:54:23+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1836,21 +2565,17 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.8.2",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-                "reference": "432fc4fc7e95b8a866790ba27e35076b9dd96ebe"
+                "reference": "509455b32ddfcb6db993ed3564f0670166c6c4c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/432fc4fc7e95b8a866790ba27e35076b9dd96ebe",
-                "reference": "432fc4fc7e95b8a866790ba27e35076b9dd96ebe",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/509455b32ddfcb6db993ed3564f0670166c6c4c7",
+                "reference": "509455b32ddfcb6db993ed3564f0670166c6c4c7",
                 "shasum": ""
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "^0.1.2",
-                "phpunit/phpunit": "^4.7"
             },
             "type": "library",
             "autoload": {
@@ -1858,7 +2583,6 @@
                     "enshrined\\svgSanitize\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0+"
             ],
@@ -1869,7 +2593,48 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2017-12-06T15:31:26+00:00"
+            "time": "2018-07-19T17:21:27+00:00"
+        },
+        {
+            "name": "ether/seo",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ethercreative/seo.git",
+                "reference": "0c16162f94f2859168641f6e4f5a6906978f5d3b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/seo/zipball/0c16162f94f2859168641f6e4f5a6906978f5d3b",
+                "reference": "0c16162f94f2859168641f6e4f5a6906978f5d3b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "seo",
+                "name": "SEO",
+                "developer": "Ether Creative",
+                "developerUrl": "https://ethercreative.co.uk",
+                "class": "ether\\seo\\Seo",
+                "schemaVersion": "3.0.0"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\seo\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "SEO utilities including a unique field type, sitemap, & redirect manager",
+            "support": {
+                "issues": "https://github.com/ethercreative/seo",
+                "docs": "https://github.com/ethercreative/seo/blob/v3/README.md"
+            },
+            "time": "2018-06-25T15:22:34+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2056,16 +2821,16 @@
         },
         {
             "name": "google/auth",
-            "version": "v1.3.0",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-auth-library-php.git",
-                "reference": "8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71"
+                "reference": "436007a77fd2037f933d3a5c8e4c7e0c9b88a7b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
-                "reference": "8f7c96146b2c62d3f4c6bbc4b5bb8a8e396b0b71",
+                "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/436007a77fd2037f933d3a5c8e4c7e0c9b88a7b0",
+                "reference": "436007a77fd2037f933d3a5c8e4c7e0c9b88a7b0",
                 "shasum": ""
             },
             "require": {
@@ -2092,7 +2857,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2018-04-06T19:26:30+00:00"
+            "time": "2018-07-23T21:44:38+00:00"
         },
         {
             "name": "google/cloud",
@@ -2320,20 +3085,23 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.6.0.1",
+            "version": "v3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/protobuf.git",
-                "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755"
+                "reference": "48cb18e5c419ddd23d9badcfe4e9df7bde1979b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/protobuf/zipball/ce044817c7ba0aea27c3fd8e496635d94d20a755",
-                "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755",
+                "url": "https://api.github.com/repos/google/protobuf/zipball/48cb18e5c419ddd23d9badcfe4e9df7bde1979b2",
+                "reference": "48cb18e5c419ddd23d9badcfe4e9df7bde1979b2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8.0"
             },
             "suggest": {
                 "ext-bcmath": "Need to support JSON deserialization"
@@ -2345,6 +3113,7 @@
                     "GPBMetadata\\Google\\Protobuf\\": "php/src/GPBMetadata/Google/Protobuf"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2353,7 +3122,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2018-06-08T01:16:44+00:00"
+            "time": "2018-07-27T20:30:28+00:00"
         },
         {
             "name": "grpc/grpc",
@@ -2574,6 +3343,104 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
+            "name": "illuminate/contracts",
+            "version": "v5.2.45",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/contracts.git",
+                "reference": "22bde7b048a33c702d9737fc1446234fff9b1363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/22bde7b048a33c702d9737fc1446234fff9b1363",
+                "reference": "22bde7b048a33c702d9737fc1446234fff9b1363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Contracts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Contracts package.",
+            "homepage": "http://laravel.com",
+            "time": "2016-08-08T11:46:08+00:00"
+        },
+        {
+            "name": "illuminate/support",
+            "version": "v5.2.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/support.git",
+                "reference": "6749fab3f3d38d8b15427536a8e7bbdc57497c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6749fab3f3d38d8b15427536a8e7bbdc57497c9e",
+                "reference": "6749fab3f3d38d8b15427536a8e7bbdc57497c9e",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "~1.0",
+                "ext-mbstring": "*",
+                "illuminate/contracts": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "illuminate/filesystem": "Required to use the composer class (5.2.*).",
+                "jeremeamia/superclosure": "Required to be able to serialize closures (~2.2).",
+                "paragonie/random_compat": "Provides a compatible interface like PHP7's random_bytes() in PHP 5 projects (~1.1).",
+                "symfony/polyfill-php56": "Required to use the hash_equals function on PHP 5.5 (~1.0).",
+                "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
+                "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Support\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Support package.",
+            "homepage": "http://laravel.com",
+            "time": "2016-02-22T20:29:02+00:00"
+        },
+        {
             "name": "imageoptim/imageoptim",
             "version": "1.3.1",
             "source": {
@@ -2618,16 +3485,16 @@
         },
         {
             "name": "imgix/imgix-php",
-            "version": "1.2.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/imgix/imgix-php.git",
-                "reference": "caa168910f99f9413a28147885ec37e91a16b786"
+                "reference": "48135b04ec02f504904d69a3af1435414f60750c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imgix/imgix-php/zipball/caa168910f99f9413a28147885ec37e91a16b786",
-                "reference": "caa168910f99f9413a28147885ec37e91a16b786",
+                "url": "https://api.github.com/repos/imgix/imgix-php/zipball/48135b04ec02f504904d69a3af1435414f60750c",
+                "reference": "48135b04ec02f504904d69a3af1435414f60750c",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +3510,7 @@
             "keywords": [
                 "imgix"
             ],
-            "time": "2018-02-02T17:34:06+00:00"
+            "time": "2018-03-13T17:09:56+00:00"
         },
         {
             "name": "intervention/httpauth",
@@ -2696,6 +3563,107 @@
                 "laravel"
             ],
             "time": "2017-06-28T17:37:25+00:00"
+        },
+        {
+            "name": "jaybizzle/crawler-detect",
+            "version": "v1.2.66",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+                "reference": "55ad4b140d821c19dbaf1a6ea9d9e5ca6444ecc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/55ad4b140d821c19dbaf1a6ea9d9e5ca6444ecc1",
+                "reference": "55ad4b140d821c19dbaf1a6ea9d9e5ca6444ecc1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.5|^6.5",
+                "satooshi/php-coveralls": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jaybizzle\\CrawlerDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Beech",
+                    "email": "m@rkbee.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+            "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+            "keywords": [
+                "crawler",
+                "crawler detect",
+                "crawler detector",
+                "crawlerdetect",
+                "php crawler detect"
+            ],
+            "time": "2018-07-30T20:23:10+00:00"
+        },
+        {
+            "name": "jmoont/pdfthumb",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmoont/pdfthumb/zipball/db49b99dc5bb78da97d730b7c6f8194b66fa9962",
+                "reference": "db49b99dc5bb78da97d730b7c6f8194b66fa9962",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "PDFThumb",
+                "handle": "pdfthumb",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/jmoont/pdfthumb/master/CHANGELOG.md",
+                "components": {
+                    "pDFThumbService": "jmoont\\pdfthumb\\services\\PDFThumbService"
+                },
+                "class": "jmoont\\pdfthumb\\PDFThumb"
+            },
+            "autoload": {
+                "psr-4": {
+                    "jmoont\\pdfthumb\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Moont",
+                    "homepage": "twitter.com/moonty"
+                }
+            ],
+            "description": "PDF thumbnail generation for Craft CMS 3 ",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "pdfthumb"
+            ],
+            "support": {
+                "docs": "https://github.com/jmoont/pdfthumb/blob/master/README.md",
+                "issues": "https://github.com/jmoont/pdfthumb/issues"
+            },
+            "time": "2018-07-11T14:38:39+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -2846,6 +3814,41 @@
                 "thief"
             ],
             "time": "2016-12-18T03:12:25+00:00"
+        },
+        {
+            "name": "larapack/dd",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/larapack/dd.git",
+                "reference": "561b5111a13d0094b59b5c81b1572489485fb948"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/larapack/dd/zipball/561b5111a13d0094b59b5c81b1572489485fb948",
+                "reference": "561b5111a13d0094b59b5c81b1572489485fb948",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/var-dumper": "*"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Topper",
+                    "email": "hi@webman.io"
+                }
+            ],
+            "description": "`dd` is a helper method in Laravel. This package will add the `dd` to your application.",
+            "time": "2016-12-15T09:34:34+00:00"
         },
         {
             "name": "league/csv",
@@ -3155,6 +4158,54 @@
             "time": "2018-01-13T05:27:58+00:00"
         },
         {
+            "name": "lsolesen/pel",
+            "version": "0.9.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lsolesen/pel.git",
+                "reference": "c9e3919f5db3b85c3c422d4f8d448dbcb2a87a23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lsolesen/pel/zipball/c9e3919f5db3b85c3c422d4f8d448dbcb2a87a23",
+                "reference": "c9e3919f5db3b85c3c422d4f8d448dbcb2a87a23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "lsolesen\\pel\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Olesen",
+                    "email": "lars@intraface.dk",
+                    "homepage": "http://intraface.dk",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Martin Geisler",
+                    "email": "martin@geisler.net",
+                    "homepage": "http://geisler.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Exif Library. A library for reading and writing Exif headers in JPEG and TIFF images using PHP.",
+            "homepage": "http://lsolesen.github.com/pel/",
+            "keywords": [
+                "exif",
+                "image"
+            ],
+            "time": "2017-02-03T11:58:58+00:00"
+        },
+        {
             "name": "lukeyouell/craft-emailvalidator",
             "version": "1.0.4",
             "source": {
@@ -3209,17 +4260,76 @@
             "time": "2018-07-08T15:35:49+00:00"
         },
         {
-            "name": "lukeyouell/craft-readtime",
-            "version": "1.3.0",
+            "name": "lukeyouell/craft-gtmetrix",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/lukeyouell/craft-readtime.git",
-                "reference": "160e2d95954f9e7bd96ed9e8e4658d496260b29c"
+                "url": "https://github.com/lukeyouell/craft-gtmetrix.git",
+                "reference": "ade65d2349351512229127879eb427244ee6bcbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lukeyouell/craft-readtime/zipball/160e2d95954f9e7bd96ed9e8e4658d496260b29c",
-                "reference": "160e2d95954f9e7bd96ed9e8e4658d496260b29c",
+                "url": "https://api.github.com/repos/lukeyouell/craft-gtmetrix/zipball/ade65d2349351512229127879eb427244ee6bcbb",
+                "reference": "ade65d2349351512229127879eb427244ee6bcbb",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "GTmetrix",
+                "handle": "gtmetrix",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": true,
+                "documentationUrl": "https://github.com/lukeyouell/craft-gtmetrix/blob/v1/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/lukeyouell/craft-gtmetrix/v1/CHANGELOG.md",
+                "components": {
+                    "gTmetrixService": "lukeyouell\\gtmetrix\\services\\GTmetrixService"
+                },
+                "class": "lukeyouell\\gtmetrix\\GTmetrix"
+            },
+            "autoload": {
+                "psr-4": {
+                    "lukeyouell\\gtmetrix\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Youell",
+                    "homepage": "https://github.com/lukeyouell"
+                }
+            ],
+            "description": "GTmetrix gives you insight on how well your entries load and provides actionable recommendations on how to optimise them.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "gtmetrix"
+            ],
+            "support": {
+                "docs": "https://github.com/lukeyouell/craft-gtmetrix/blob/v1/README.md",
+                "issues": "https://github.com/lukeyouell/craft-gtmetrix/issues"
+            },
+            "time": "2018-04-16T09:31:38+00:00"
+        },
+        {
+            "name": "lukeyouell/craft-readtime",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lukeyouell/craft-readtime.git",
+                "reference": "3ae4b36780fbc18ba2983b937ef7f92a1f2ba261"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lukeyouell/craft-readtime/zipball/3ae4b36780fbc18ba2983b937ef7f92a1f2ba261",
+                "reference": "3ae4b36780fbc18ba2983b937ef7f92a1f2ba261",
                 "shasum": ""
             },
             "require": {
@@ -3260,7 +4370,61 @@
                 "docs": "https://github.com/lukeyouell/craft-readtime/blob/master/README.md",
                 "issues": "https://github.com/lukeyouell/craft-readtime/issues"
             },
-            "time": "2018-06-22T14:02:59+00:00"
+            "time": "2018-07-31T10:14:02+00:00"
+        },
+        {
+            "name": "lukeyouell/craft-sidebarthemes",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lukeyouell/craft-sidebarthemes.git",
+                "reference": "0131b7cc5c0cfbe735e05ef7f93c55be9458610b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lukeyouell/craft-sidebarthemes/zipball/0131b7cc5c0cfbe735e05ef7f93c55be9458610b",
+                "reference": "0131b7cc5c0cfbe735e05ef7f93c55be9458610b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Sidebar Themes",
+                "handle": "sidebar-themes",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/lukeyouell/craft-sidebarthemes/master/CHANGELOG.md",
+                "class": "lukeyouell\\sidebarthemes\\SidebarThemes"
+            },
+            "autoload": {
+                "psr-4": {
+                    "lukeyouell\\sidebarthemes\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Youell",
+                    "homepage": "https://github.com/lukeyouell"
+                }
+            ],
+            "description": "Customise the look of the CP sidebar",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "sidebar themes"
+            ],
+            "support": {
+                "docs": "https://github.com/lukeyouell/craft-sidebarthemes/blob/master/README.md",
+                "issues": "https://github.com/lukeyouell/craft-sidebarthemes/issues"
+            },
+            "time": "2018-05-03T15:13:29+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -3358,6 +4522,116 @@
                 "issues": "https://github.com/mikestecker/craft-readability/issues"
             },
             "time": "2018-04-04T16:33:19+00:00"
+        },
+        {
+            "name": "mmikkel/child-me",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mmikkel/ChildMe-Craft.git",
+                "reference": "d198e514b34e523c41df527930885c374b1580af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/ChildMe-Craft/zipball/d198e514b34e523c41df527930885c374b1580af",
+                "reference": "d198e514b34e523c41df527930885c374b1580af",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Child Me!",
+                "handle": "child-me",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/ChildMe-Craft/master/CHANGELOG.md",
+                "class": "mmikkel\\childme\\ChildMe"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\childme\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "https://vaersaagod.no"
+                }
+            ],
+            "description": "Easily create child elements",
+            "keywords": [
+                "child me",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/ChildMe-Craft/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/ChildMe-Craft/issues"
+            },
+            "time": "2018-06-05T19:14:46+00:00"
+        },
+        {
+            "name": "mmikkel/cp-field-inspect",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mmikkel/CpFieldInspect-Craft.git",
+                "reference": "426d9638f8eca0f6a9f1beedb8a945726840d436"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/426d9638f8eca0f6a9f1beedb8a945726840d436",
+                "reference": "426d9638f8eca0f6a9f1beedb8a945726840d436",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "CP Field Inspect",
+                "handle": "cp-field-inspect",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/CpFieldInspect-Craft/master/CHANGELOG.md",
+                "class": "mmikkel\\cpfieldinspect\\CpFieldInspect"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\cpfieldinspect\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "http://mmikkel.no"
+                }
+            ],
+            "description": "Inspect field handles and easily edit field settings",
+            "keywords": [
+                "cms",
+                "cp field inspect",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/CpFieldInspect-Craft/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues"
+            },
+            "time": "2018-03-28T07:58:02+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3624,21 +4898,79 @@
             "time": "2016-12-03T22:08:25+00:00"
         },
         {
-            "name": "nystudio107/craft-eagerbeaver",
-            "version": "1.0.3",
+            "name": "nystudio107/craft-disqus",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nystudio107/craft-eagerbeaver.git",
-                "reference": "6178b4fc1feb5e5d4bc12ea1f0cf2a312dabb436"
+                "url": "https://github.com/nystudio107/craft-disqus.git",
+                "reference": "d4ce2982bbffdadc1b5ba4e5f3b2b7520b244720"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-eagerbeaver/zipball/6178b4fc1feb5e5d4bc12ea1f0cf2a312dabb436",
-                "reference": "6178b4fc1feb5e5d4bc12ea1f0cf2a312dabb436",
+                "url": "https://api.github.com/repos/nystudio107/craft-disqus/zipball/d4ce2982bbffdadc1b5ba4e5f3b2b7520b244720",
+                "reference": "d4ce2982bbffdadc1b5ba4e5f3b2b7520b244720",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Disqus",
+                "handle": "disqus",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-disqus/master/CHANGELOG.md",
+                "components": {
+                    "disqusService": "nystudio107\\disqus\\services\\DisqusService"
+                },
+                "class": "nystudio107\\disqus\\Disqus"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\disqus\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Integrates the Disqus commenting system into Craft 3 websites, including Single Sign On (SSO) and custom login/logout URLs",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "disqus"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-disqus/blob/master/README.md",
+                "issues": "https://github.com/nystudio107/craft-disqus/issues"
+            },
+            "time": "2018-02-01T22:43:19+00:00"
+        },
+        {
+            "name": "nystudio107/craft-eagerbeaver",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-eagerbeaver.git",
+                "reference": "e3b2d3e1847bfca022812a2a2aba2481636a85ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-eagerbeaver/zipball/e3b2d3e1847bfca022812a2a2aba2481636a85ea",
+                "reference": "e3b2d3e1847bfca022812a2a2aba2481636a85ea",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3675,14 +5007,14 @@
                 "craftcms",
                 "eager",
                 "eager beaver",
-                "eager loeading",
+                "eager loading",
                 "loading"
             ],
             "support": {
                 "docs": "https://github.com/nystudio107/craft-eagerbeaver/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/craft-eagerbeaver/issues"
             },
-            "time": "2018-03-02T15:46:15+00:00"
+            "time": "2018-07-30T05:25:22+00:00"
         },
         {
             "name": "nystudio107/craft-minify",
@@ -3744,6 +5076,175 @@
             "time": "2018-07-21T15:09:55+00:00"
         },
         {
+            "name": "nystudio107/craft-pathtools",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-pathtools.git",
+                "reference": "1794cee41ef134a36663d1cd97e7f90508351406"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-pathtools/zipball/1794cee41ef134a36663d1cd97e7f90508351406",
+                "reference": "1794cee41ef134a36663d1cd97e7f90508351406",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "PathTools",
+                "handle": "path-tools",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-pathtools/master/CHANGELOG.md",
+                "class": "nystudio107\\pathtools\\PathTools"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\pathtools\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "This twig plugin for the Craft CMS brings convenient path & url manipulation functions & filters to your Twig templates.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "pathtools"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-pathtools/blob/master/README.md",
+                "issues": "https://github.com/nystudio107/craft-pathtools/issues"
+            },
+            "time": "2018-02-02T04:22:25+00:00"
+        },
+        {
+            "name": "nystudio107/craft-richvariables",
+            "version": "1.0.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-richvariables.git",
+                "reference": "638d6f2d3091f1082e329581bf38d59058280dac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-richvariables/zipball/638d6f2d3091f1082e329581bf38d59058280dac",
+                "reference": "638d6f2d3091f1082e329581bf38d59058280dac",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Rich Variables",
+                "handle": "rich-variables",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-richvariables/v1/CHANGELOG.md",
+                "class": "nystudio107\\richvariables\\RichVariables"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\richvariables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Allows you to easily use Craft Globals as variables in Rich Text fields",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "richvariables"
+            ],
+            "time": "2018-05-19T11:43:09+00:00"
+        },
+        {
+            "name": "nystudio107/craft-routemap",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-routemap.git",
+                "reference": "f7eb718e9903c429eb56e940eeaa3bb682b75855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-routemap/zipball/f7eb718e9903c429eb56e940eeaa3bb682b75855",
+                "reference": "f7eb718e9903c429eb56e940eeaa3bb682b75855",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "~3.0.0-RC3"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Route Map",
+                "handle": "route-map",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-routemap/v1/CHANGELOG.md",
+                "components": {
+                    "routes": "nystudio107\\routemap\\services\\Routes"
+                },
+                "class": "nystudio107\\routemap\\RouteMap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\routemap\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "Returns a list of Craft/Vue/React route rules and element URLs for ServiceWorkers from Craft entries",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "react",
+                "route map",
+                "routes",
+                "serviceworker",
+                "vue"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-routemap/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-routemap/issues"
+            },
+            "time": "2018-05-15T20:36:24+00:00"
+        },
+        {
             "name": "nystudio107/craft-similar",
             "version": "1.0.2",
             "source": {
@@ -3802,6 +5303,63 @@
                 "issues": "https://github.com/nystudio107/craft-similar/issues"
             },
             "time": "2018-07-22T03:31:09+00:00"
+        },
+        {
+            "name": "nystudio107/craft-twigprofiler",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-twigprofiler.git",
+                "reference": "05bf0b8c4e251d9d1fa1b557389c7532161cbf7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigprofiler/zipball/05bf0b8c4e251d9d1fa1b557389c7532161cbf7d",
+                "reference": "05bf0b8c4e251d9d1fa1b557389c7532161cbf7d",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Twig Profiler",
+                "handle": "twig-profiler",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-twigprofiler/master/CHANGELOG.md",
+                "components": {
+                    "profile": "nystudio107\\twigprofiler\\services\\Profile"
+                },
+                "class": "nystudio107\\twigprofiler\\TwigProfiler"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\twigprofiler\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "Twig Profiler allows you to profile sections of your Twig templates, and see the resulting timings in the Yii2 Debug Toolbar",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "twig profiler"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-twigprofiler/blob/master/README.md",
+                "issues": "https://github.com/nystudio107/craft-twigprofiler/issues"
+            },
+            "time": "2018-04-07T22:46:56+00:00"
         },
         {
             "name": "olivestudio/craft-olivemenus",
@@ -3904,6 +5462,118 @@
                 "random"
             ],
             "time": "2018-07-04T16:31:37+00:00"
+        },
+        {
+            "name": "pdaleramirez/category-tree",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdaleramirez/category-tree.git",
+                "reference": "fb61a9bb2c85eb8caf5f4b297d134f5bafe0e89b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdaleramirez/category-tree/zipball/fb61a9bb2c85eb8caf5f4b297d134f5bafe0e89b",
+                "reference": "fb61a9bb2c85eb8caf5f4b297d134f5bafe0e89b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Category Tree",
+                "handle": "category-tree",
+                "schemaVersion": "1",
+                "changelogUrl": "https://raw.githubusercontent.com/pdaleramirez/category-tree/master/CHANGELOG.md",
+                "class": "pdaleramirez\\categoryTree\\CategoryTree"
+            },
+            "autoload": {
+                "psr-4": {
+                    "pdaleramirez\\categoryTree\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Precious Dale Ramirez",
+                    "homepage": "https://github.com/pdaleramirez"
+                }
+            ],
+            "description": "Builds a category tree structure for your menu and links.",
+            "keywords": [
+                "category tree",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/pdaleramirez/category-tree/blob/master/README.md",
+                "issues": "https://github.com/pdaleramirez/category-tree/issues"
+            },
+            "time": "2018-04-04T04:03:33+00:00"
+        },
+        {
+            "name": "pennebaker/craft-architect",
+            "version": "2.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pennebaker/craft-architect.git",
+                "reference": "ba138b453ee9d38fa97f4b712cc71f7499a2648a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pennebaker/craft-architect/zipball/ba138b453ee9d38fa97f4b712cc71f7499a2648a",
+                "reference": "ba138b453ee9d38fa97f4b712cc71f7499a2648a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Architect",
+                "handle": "architect",
+                "schemaVersion": "2.0.0",
+                "developer": "Pennebaker",
+                "hasCpSettings": false,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/Pennebaker/craft-architect/master/CHANGELOG.md",
+                "components": {
+                    "architectService": "pennebaker\\architect\\services\\ArchitectService"
+                },
+                "class": "pennebaker\\architect\\Architect"
+            },
+            "autoload": {
+                "psr-4": {
+                    "pennebaker\\architect\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pennebaker",
+                    "homepage": "https://pennebaker.com"
+                }
+            ],
+            "description": "CraftCMS plugin to generate content models from JSON data.",
+            "keywords": [
+                "architect",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/Pennebaker/craft-architect/blob/master/README.md",
+                "issues": "https://github.com/Pennebaker/craft-architect/issues"
+            },
+            "time": "2018-06-11T12:44:19+00:00"
         },
         {
             "name": "phenx/php-font-lib",
@@ -4233,6 +5903,52 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
+            "name": "putyourlightson/craft-entry-count",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-entry-count.git",
+                "reference": "036545e072ba8b2173b31b4ae6ccfa372fae1901"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-entry-count/zipball/036545e072ba8b2173b31b4ae6ccfa372fae1901",
+                "reference": "036545e072ba8b2173b31b4ae6ccfa372fae1901",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Entry Count",
+                "handle": "entry-count",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://www.putyourlightson.net/",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-entry-count/v2/CHANGELOG.md",
+                "class": "putyourlightson\\entrycount\\EntryCount"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\entrycount\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Count and display the number of times that an entry has been viewed.",
+            "homepage": "https://www.putyourlightson.net/craft-entry-count",
+            "support": {
+                "docs": "https://www.putyourlightson.net/craft-entry-count/docs",
+                "source": "https://github.com/putyourlightson/craft-entry-count",
+                "issues": "https://github.com/putyourlightson/craft-entry-count/issues"
+            },
+            "time": "2018-05-17T16:04:57+00:00"
+        },
+        {
             "name": "ramsey/uuid",
             "version": "3.8.0",
             "source": {
@@ -4300,6 +6016,66 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "rias/craft-contact-form-extensions",
+            "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Rias500/craft-contact-form-extensions.git",
+                "reference": "d01e8cc7ce00a2080da8254f6e93136cb3070d7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Rias500/craft-contact-form-extensions/zipball/d01e8cc7ce00a2080da8254f6e93136cb3070d7e",
+                "reference": "d01e8cc7ce00a2080da8254f6e93136cb3070d7e",
+                "shasum": ""
+            },
+            "require": {
+                "albertcht/invisible-recaptcha": "^1.8",
+                "craftcms/cms": "^3.0.0-RC1",
+                "craftcms/contact-form": "^2.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Contact Form Extensions",
+                "handle": "contact-form-extensions",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/Rias500/craft-contact-form-extensions/master/CHANGELOG.md",
+                "components": {
+                    "contactFormExtensionsService": "rias\\contactformextensions\\services\\ContactFormExtensionsService"
+                },
+                "class": "rias\\contactformextensions\\ContactFormExtensions"
+            },
+            "autoload": {
+                "psr-4": {
+                    "rias\\contactformextensions\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rias",
+                    "homepage": "https://rias.be"
+                }
+            ],
+            "description": "Adds extensions to the Craft CMS contact form plugin.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft contact form extensions",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/Rias500/craft-contact-form-extensions/blob/master/README.md",
+                "issues": "https://github.com/Rias500/craft-contact-form-extensions/issues"
+            },
+            "time": "2018-07-31T08:41:15+00:00"
         },
         {
             "name": "rias/craft-position-fieldtype",
@@ -4513,6 +6289,42 @@
             "time": "2017-06-14T03:57:53+00:00"
         },
         {
+            "name": "sebastianlenz/linkfield",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastian-lenz/craft-linkfield.git",
+                "reference": "db54a48fbc685f306a7610ca76d8e6e19f483b84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/db54a48fbc685f306a7610ca76d8e6e19f483b84",
+                "reference": "db54a48fbc685f306a7610ca76d8e6e19f483b84",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "php": "^7.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "typedlinkfield",
+                "name": "Typed link field",
+                "developer": "Sebastian Lenz",
+                "developerUrl": "https://github.com/sebastian-lenz/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "typedlinkfield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Craft field type for selecting links",
+            "time": "2018-07-29T11:17:20+00:00"
+        },
+        {
             "name": "seld/cli-prompt",
             "version": "1.0.3",
             "source": {
@@ -4694,6 +6506,182 @@
                 "spatie"
             ],
             "time": "2018-06-08T09:55:00+00:00"
+        },
+        {
+            "name": "ssnepenthe/color-utils",
+            "version": "0.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ssnepenthe/color-utils.git",
+                "reference": "a68562f81fd603be0c45d102b4e8064c76ddf863"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ssnepenthe/color-utils/zipball/a68562f81fd603be0c45d102b4e8064c76ddf863",
+                "reference": "a68562f81fd603be0c45d102b4e8064c76ddf863",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "inc/colors.php",
+                    "inc/helpers.php",
+                    "inc/transformations.php"
+                ],
+                "psr-4": {
+                    "SSNepenthe\\ColorUtils\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "A PHP library for performing SASS-like color manipulations.",
+            "homepage": "https://github.com/ssnepenthe/color-utils",
+            "keywords": [
+                "Brightness",
+                "alpha",
+                "blue",
+                "color",
+                "conversion",
+                "convert",
+                "green",
+                "hex",
+                "hexadecimal",
+                "hsl",
+                "hsla",
+                "hue",
+                "lightness",
+                "luminance",
+                "manipulation",
+                "red",
+                "rgb",
+                "rgba",
+                "sass",
+                "saturation",
+                "scss",
+                "transformation"
+            ],
+            "time": "2017-06-19T16:48:17+00:00"
+        },
+        {
+            "name": "studioespresso/craft-dumper",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/studioespresso/craft3-dumper.git",
+                "reference": "3f9ef15ea639c85e7d6fb644081ddc7d2e004224"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/studioespresso/craft3-dumper/zipball/3f9ef15ea639c85e7d6fb644081ddc7d2e004224",
+                "reference": "3f9ef15ea639c85e7d6fb644081ddc7d2e004224",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "larapack/dd": ">=1.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Dumper",
+                "handle": "dumper",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/studioespresso/craft3-dumper/master/CHANGELOG.md",
+                "class": "studioespresso\\craftdumper\\CraftDumper"
+            },
+            "autoload": {
+                "psr-4": {
+                    "studioespresso\\craftdumper\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Studio Espresso",
+                    "homepage": "https://studioespresso.co"
+                }
+            ],
+            "description": "Bringing larapack/dd to Craft 3",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "dumper"
+            ],
+            "support": {
+                "docs": "https://github.com/studioespresso/craft3-dumper/blob/master/README.md",
+                "issues": "https://github.com/studioespresso/craft3-dumper/issues"
+            },
+            "time": "2018-07-20T17:28:50+00:00"
+        },
+        {
+            "name": "superbig/craft3-http2serverpush",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sjelfull/craft3-http2serverpush.git",
+                "reference": "7c2b860acdbe47d2a6acb4986bd4487d04bd70b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjelfull/craft3-http2serverpush/zipball/7c2b860acdbe47d2a6acb4986bd4487d04bd70b6",
+                "reference": "7c2b860acdbe47d2a6acb4986bd4487d04bd70b6",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "~3.0.0-beta.23",
+                "symfony/css-selector": "^2.7|^3.0",
+                "symfony/dom-crawler": "^2.7|^3.0",
+                "tightenco/collect": "^5.5"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "HTTP2 Server Push",
+                "handle": "http2-server-push",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft3-http2serverpush/master/CHANGELOG.md",
+                "components": {
+                    "http2ServerPushService": "superbig\\http2serverpush\\services\\Http2ServerPushService"
+                },
+                "class": "superbig\\http2serverpush\\Http2ServerPush"
+            },
+            "autoload": {
+                "psr-4": {
+                    "superbig\\http2serverpush\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Superbig",
+                    "homepage": "https://superbig.co"
+                }
+            ],
+            "description": "Automatically add HTTP2 Link headers for CSS, JS and image assets.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "http2 server push"
+            ],
+            "support": {
+                "docs": "https://github.com/sjelfull/craft3-http2serverpush/blob/master/README.md",
+                "issues": "https://github.com/sjelfull/craft3-http2serverpush/issues"
+            },
+            "time": "2017-11-14T14:19:57+00:00"
         },
         {
             "name": "superbig/craft3-templateselect",
@@ -4934,6 +6922,58 @@
             "time": "2017-07-29T21:27:59+00:00"
         },
         {
+            "name": "symfony/css-selector",
+            "version": "v3.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/css-selector.git",
+                "reference": "4d882dced7b995d5274293039370148e291808f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/4d882dced7b995d5274293039370148e291808f2",
+                "reference": "4d882dced7b995d5274293039370148e291808f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\CssSelector\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jean-François Simon",
+                    "email": "jeanfrancois.simon@sensiolabs.com"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony CssSelector Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-05-01T15:01:29+00:00"
+        },
+        {
             "name": "symfony/debug",
             "version": "v3.3.6",
             "source": {
@@ -4988,6 +7028,58 @@
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
             "time": "2017-07-28T15:27:31+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v3.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "fc2c588ce376e9fe04a7b8c79e3ec62fe32d95b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/fc2c588ce376e9fe04a7b8c79e3ec62fe32d95b1",
+                "reference": "fc2c588ce376e9fe04a7b8c79e3ec62fe32d95b1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DomCrawler Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-05-25T23:10:31+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -5250,6 +7342,113 @@
             "time": "2017-07-13T13:05:09+00:00"
         },
         {
+            "name": "symfony/var-dumper",
+            "version": "v3.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "b2623bccb969ad595c2090f9be498b74670d0663"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/b2623bccb969ad595c2090f9be498b74670d0663",
+                "reference": "b2623bccb969ad595c2090f9be498b74670d0663",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-symfony_debug": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2017-07-28T06:06:09+00:00"
+        },
+        {
+            "name": "tightenco/collect",
+            "version": "v5.5.33",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/collect.git",
+                "reference": "a2a3ca1c56aa18948b4e08e90f38fcdee859cc4c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/a2a3ca1c56aa18948b4e08e90f38fcdee859cc4c",
+                "reference": "a2a3ca1c56aa18948b4e08e90f38fcdee859cc4c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "symfony/var-dumper": "~3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Collect/Support/helpers.php",
+                    "src/Collect/Support/alias.php"
+                ],
+                "psr-4": {
+                    "Tightenco\\Collect\\": "src/Collect"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Collect - Illuminate Collections as a separate package.",
+            "keywords": [
+                "collection",
+                "laravel"
+            ],
+            "time": "2018-02-09T02:05:17+00:00"
+        },
+        {
             "name": "tinify/tinify",
             "version": "1.5.2",
             "source": {
@@ -5353,6 +7552,70 @@
                 "issues": "https://github.com/tomdiggle/craft-gatekeeper/issues"
             },
             "time": "2018-05-07T19:56:56+00:00"
+        },
+        {
+            "name": "topshelfcraft/supersort",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TopShelfCraft/SuperSort.git",
+                "reference": "8e3e23e30b49a9fbb285e6b2dd0b458de74e340d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TopShelfCraft/SuperSort/zipball/8e3e23e30b49a9fbb285e6b2dd0b458de74e340d",
+                "reference": "8e3e23e30b49a9fbb285e6b2dd0b458de74e340d",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC3"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "SuperSort",
+                "handle": "supersort",
+                "developer": "Top Shelf Craft (Michael Rog)",
+                "developerUrl": "https://topshelfcraft.com",
+                "schemaVersion": "0.0.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://github.com/TopShelfCraft/SuperSort/raw/master/CHANGELOG.md",
+                "components": {
+                    "sorter": "topshelfcraft\\supersort\\services\\Sorter"
+                },
+                "class": "topshelfcraft\\supersort\\SuperSort"
+            },
+            "autoload": {
+                "psr-4": {
+                    "topshelfcraft\\supersort\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Top Shelf Craft (Michael Rog)",
+                    "homepage": "https://topshelfcraft.com"
+                },
+                {
+                    "name": "TJ Draper",
+                    "homepage": "https://buzzingpixel.com"
+                }
+            ],
+            "description": "...a super-duper sorting function for your Craft templates.",
+            "keywords": [
+                "SuperSort",
+                "array",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "list",
+                "sort",
+                "sorting"
+            ],
+            "support": {
+                "docs": "https://github.com/TopShelfCraft/SuperSort"
+            },
+            "time": "2017-12-24T07:18:11+00:00"
         },
         {
             "name": "true/punycode",
@@ -5505,6 +7768,128 @@
             "time": "2018-07-13T07:18:09+00:00"
         },
         {
+            "name": "verbb/cp-nav",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/cp-nav.git",
+                "reference": "51d9cbcc58e6cd9f78d4d9286f540e3c35ad8c8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/cp-nav/zipball/51d9cbcc58e6cd9f78d4d9286f540e3c35ad8c8b",
+                "reference": "51d9cbcc58e6cd9f78d4d9286f540e3c35ad8c8b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Control Panel Nav",
+                "handle": "cp-nav",
+                "description": "Control Panel Nav helps you managing your Control Panel navigation.",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/verbb/cp-nav",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/cp-nav/craft-3/CHANGELOG.md",
+                "class": "verbb\\cpnav\\CpNav"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\cpnav\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "http://verbb.io"
+                }
+            ],
+            "description": "Control Panel Nav is a Craft CMS plugin to help manage your Control Panel navigation.",
+            "keywords": [
+                "cms",
+                "control panel nav",
+                "control panel navigation",
+                "cp nav",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/cp-nav/issues?state=open",
+                "source": "https://github.com/verbb/cp-nav",
+                "docs": "https://github.com/verbb/cp-nav",
+                "rss": "https://github.com/verbb/cp-nav/commits/v2.atom"
+            },
+            "time": "2018-07-05T05:25:24+00:00"
+        },
+        {
+            "name": "verbb/expanded-singles",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/expanded-singles.git",
+                "reference": "0d5d80ff5fec1f2a8a70c0f981efa4650211a479"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/expanded-singles/zipball/0d5d80ff5fec1f2a8a70c0f981efa4650211a479",
+                "reference": "0d5d80ff5fec1f2a8a70c0f981efa4650211a479",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Expanded Singles",
+                "handle": "expanded-singles",
+                "description": "Alters the Entries Index sidebar to list all Singles, rather than grouping them under a 'Singles' link.",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/verbb/expanded-singles",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/expanded-singles/craft-3/CHANGELOG.md",
+                "class": "verbb\\expandedsingles\\ExpandedSingles"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\expandedsingles\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "A simple plugin for Craft CMS that alters the Entries Index sidebar to list all Singles, rather than grouping them under a 'Singles' link.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "expanded singles"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/expanded-singles/issues?state=open",
+                "source": "https://github.com/verbb/expanded-singles",
+                "docs": "https://github.com/verbb/expanded-singles",
+                "rss": "https://github.com/verbb/expanded-singles/commits/v2.atom"
+            },
+            "time": "2018-07-04T22:06:04+00:00"
+        },
+        {
             "name": "verbb/field-manager",
             "version": "2.0.2",
             "source": {
@@ -5563,6 +7948,67 @@
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
             "time": "2018-02-24T22:45:12+00:00"
+        },
+        {
+            "name": "verbb/image-resizer",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/image-resizer.git",
+                "reference": "5cb23d7beb3cd094f49ac0ab70874ea6d7fc2644"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/image-resizer/zipball/5cb23d7beb3cd094f49ac0ab70874ea6d7fc2644",
+                "reference": "5cb23d7beb3cd094f49ac0ab70874ea6d7fc2644",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC11",
+                "lsolesen/pel": "^0.9.6"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Image Resizer",
+                "handle": "image-resizer",
+                "description": "Image Resizer resizes your assets when they are uploaded.",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/verbb/image-resizer",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/image-resizer/craft-3/CHANGELOG.md",
+                "class": "verbb\\imageresizer\\ImageResizer"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\imageresizer\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Image Resizer is a Craft plugin that resizes your assets when they are uploaded.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "example"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/image-resizer/issues?state=open",
+                "source": "https://github.com/verbb/image-resizer",
+                "docs": "https://github.com/verbb/image-resizer",
+                "rss": "https://github.com/verbb/image-resizer/commits/v2.atom"
+            },
+            "time": "2018-05-08T12:46:30+00:00"
         },
         {
             "name": "verbb/super-table",
@@ -5626,28 +8072,28 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
+                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -5657,7 +8103,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause-Attribution"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -5672,7 +8118,60 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01T10:05:43+00:00"
+            "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "xpertbot/craft-wheelform",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xpertbot/craft-wheelform.git",
+                "reference": "8262d10d1c37fc46ca740f54c336c97e3f2e7621"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xpertbot/craft-wheelform/zipball/8262d10d1c37fc46ca740f54c336c97e3f2e7621",
+                "reference": "8262d10d1c37fc46ca740f54c336c97e3f2e7621",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Wheel Form",
+                "handle": "wheelform",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://github.com/xpertbot/craft-wheelform/CHANGELOG.md",
+                "components": {
+                    "mailer": "Wheelform\\Mailer"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "wheelform\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wheel Interactive",
+                    "homepage": "https://wheelinteractive.com"
+                }
+            ],
+            "description": "Craft CMS 3 Form administrator with Database integration",
+            "keywords": [
+                "Craft",
+                "Wheel Form",
+                "cms",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "time": "2018-07-14T18:11:23+00:00"
         },
         {
             "name": "yiisoft/yii2",

@@ -4,13 +4,16 @@
     Template
 #}
 
-{% extends "_components/base" %}
+{% extends "_partials/base" %}
 
 {% set thisPage = 'Home' %}
 {% block main %}
 {% set entries = craft.entries.section('articles').isFeatured('1').limit(5).all() %}
 
 	<main id="panel" role="main" class="slideout-panel">
+		<a class="site-brand" href="/" title="{{ siteName }}">
+			<img src="/assets/imgs/cts-bloc=lt.png">
+		</a>
 		{% block aside %}
       {{ parent() }}
     {% endblock aside %}
@@ -78,13 +81,60 @@
 
 			</div>
 		</section>
+{#
+		<script type="text/javascript">
+
+    		var feed = new Instafeed({
+    			clientId: '0cc1a130a938482490267534dd593bf8',
+    			accessToken: '6168214855.0cc1a13.52ab5ba6b50640e28e6b1f18906ebadc',
+    			get: 'user',
+    			userId: '6168214855',
+    			target: 'instafeed',
+    			limit: '5',
+    			template: '<a href="{{link}}" class="insta"><img data-aos="fade-up-left" src="{{image}}" /></a>'
+    		});
+    		feed.run();
+    	</script>
+#}
+
+		{% set fill %}
+      <div class="feed-filler">
+        <a href="#"><img class="fill one" data-aos="fade-up-left" src="/assets/imgs/dummy.png"></a>
+        <a href="#"><img class="fill two" data-aos="fade-up-left" src="/assets/imgs/dummy.png"></a>
+        <a href="#"><img class="fill three" data-aos="fade-up-left" src="/assets/imgs/dummy.png"></a>
+      </div>
+    {% endset %}
+
+    <caption class="ig-label">Instagram</caption>
+    <h2>Most Recent</h2>
+    <a href="http://instagram.com/chuck_taylor_swift" target="_blank"><div class="btn follow">Follow</div></a>
+
+
 		<section class="instagram-feed">
-			<div id="instafeed"></div>
+			<div id="instafeed">
+				<a href="https://www.instagram.com/p/BbA6y9pBZLp/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/a16305810fbbaa2a69e8028d5c33838e/5BEFDFAC/t51.2885-15/e35/c179.0.722.722/s150x150/23101123_1588706427818338_4687887186459099136_n.jpg"></a>
+
+				<a href="https://www.instagram.com/p/Bak84rKBibc/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/20e7b2c69ccb6726b9819d76c4ae8ec1/5C0B13C5/t51.2885-15/e35/c135.0.809.809/s150x150/22708948_563251950678790_8180902934888841216_n.jpg"></a>
+
+				<a href="https://www.instagram.com/p/BakZtxJBrSy/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/3031534534a538b76353d997d854e905/5B60D021/t51.2885-15/e15/c140.0.360.360/s150x150/22708907_376302526132471_2629705417600532480_n.jpg"></a>
+
+				<a href="https://www.instagram.com/p/BbA6y9pBZLp/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/a16305810fbbaa2a69e8028d5c33838e/5BEFDFAC/t51.2885-15/e35/c179.0.722.722/s150x150/23101123_1588706427818338_4687887186459099136_n.jpg"></a>
+
+				<a href="https://www.instagram.com/p/Bak84rKBibc/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/20e7b2c69ccb6726b9819d76c4ae8ec1/5C0B13C5/t51.2885-15/e35/c135.0.809.809/s150x150/22708948_563251950678790_8180902934888841216_n.jpg"></a>
+
+				<a href="https://www.instagram.com/p/BakZtxJBrSy/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/3031534534a538b76353d997d854e905/5B60D021/t51.2885-15/e15/c140.0.360.360/s150x150/22708907_376302526132471_2629705417600532480_n.jpg"></a>
+
+				<a href="https://www.instagram.com/p/BakZtxJBrSy/"><img class="insta" data-aos="fade-up-left" src="//scontent.cdninstagram.com/vp/3031534534a538b76353d997d854e905/5B60D021/t51.2885-15/e15/c140.0.360.360/s150x150/22708907_376302526132471_2629705417600532480_n.jpg"></a>
+
+			</div>
+			{{ fill }}
 		</section>
 
-		<section class="about">
-			<h1>Chuck Taylor Swift</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</section>
+
+
 	</main>
 {% endblock %}
+
+
+
+

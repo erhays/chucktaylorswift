@@ -1,0 +1,28 @@
+{#
+		/_partials/comments.html
+		Disqus Comments Module
+		Template Block
+#}
+
+{% block comments %}
+
+	<div id="disqus_thread"></div>
+
+  <script>
+  	var disqus_config = function () {
+  		var disqus_shortname = 'chucktaylorswift';
+  		this.page.url = '{';
+  		//Replace PAGE_URL with your page's canonical URL variable
+  		var disqus_identifier = 'blog-{{ entry.id }}';
+  	};
+
+	  (function() { // DON'T EDIT BELOW THIS LINE
+	  var d = document, s = d.createElement('script');
+	  s.src = 'https://chucktaylorswift.disqus.com/embed.js';
+	  s.setAttribute('data-timestamp', +new Date());
+	  (d.head || d.body).appendChild(s);
+	  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+{% endblock comments %}

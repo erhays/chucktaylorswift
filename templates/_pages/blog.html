@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Music meets culture.">
+        <meta content="CHUCKTAYLORSWIFT" property="og:title">
+        <meta content="Music meets culture. By Emily Brooke Robertson." property="og:description">
+        <meta content="summary" name="twitter:card">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta content="Erik Hays" name="author">
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- SLIDEOUT.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+        <!-- WEBFONT PRELOADER -->
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <!--SWIPER.JS-->
+        <script src="https://chucktaylorswift.com/assets/js/swiper.min.js"></script>
+        <!-- CHOCOLAT JS -->
+        <script src="https://chucktaylorswift.com/assets/js/jquery.chocolat.js"></script>
+        <!-- CHOCOLAT CSS -->
+        <link rel="stylesheet" href="https://chucktaylorswift.com/assets/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+        <!-- ALGOLIA SRCH -->
+        <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
+        <script src="https://chucktaylorswift.com/assets/js/app.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.css">
+        <!--INITS-->
+        <script>
+          $(document).ready(function() {
+              //Web Font Preloader
+              WebFont.load({
+                google: {
+                  families: ['Abril Fatface', 'Karla', 'Abel', 'Noto Serif']
+                }
+              });
+              //Slideout.js
+              var slideout = new Slideout({
+                'panel': document.getElementById('panel'),
+                'menu': document.getElementById('menu'),
+                'padding': 155,
+                'tolerance': 70
+              });
+              // Toggle button
+              document.querySelector('.toggle-nav')
+                .addEventListener('click', function() {
+                  slideout.toggle();
+              });
+              // Chocolat
+              $('.chocolat-parent').Chocolat();
+
+          });
+        </script>
+        <!-- INSTAFEED.JS -->
+        <script src="https://chucktaylorswift.com/assets/js/instafeed.min.js"></script>
+        <!--FA ICONS-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://chucktaylorswift.com/assets/css/cts.css">
+        <link rel="stylesheet" href="https://chucktaylorswift.com/assets/css/swiper.min.css">
+        <link rel="canonical" href="blog.chucktaylorswift.com">
+        <title>CTS — Blog</title>
+    </head>
+    <body class=" ">
+      <nav id="menu" class="slideout-menu" role="navigation" aria-label="main navigation">
+          <ul>
+            <li class="button">
+              <a href="/" title="Site Home">
+               	Home
+              </a>
+            </li>
+            {block:AskEnabled}
+            	<li><a href="/ask" title="{AskLabel}">{AskLabel}</a></li>
+            {/block:AskEnabled}
+            {block:SubmissionsEnabled}
+            	<li><a href="/submit" title="{SubmitLabel}">{SubmitLabel}</a></li>
+            {/block:SubmissionsEnabled}
+            {block:HasPages}
+            	{block:Pages}
+            		<li><a href="{URL}" title="{Label}">{Label}</a></li>
+            	{/block:Pages}
+            {/block:HasPages}
+          </ul>
+        </nav>
+			<main id="panel" role="main" class="slideout-panel">
+    		<a href="/" title="Home">
+           <img src="/assets/imgs/cts-brand-logo.svg" class="brand-logo" alt="{{ siteName }}">
+          </a>
+          <header>
+            <button class="toggle-nav">☰</button>
+            <ul class="social-aside">
+              <a href="#" target="_blank"><li><i class="fab fa-twitter"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-instagram"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-spotify"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-tumblr"></i></li></a>
+              <a href="#" target="_blank"><li><i class="fab fa-lastfm"></i></li></a>
+            </ul>
+            <ul class="social-aside">
+              <a href="/admin"><li class="login"><i class="fas fa-sign-in-alt"></i></li></a>
+            </ul>
+          </header>
+    			<section class="blog page">
+      			<div class="article-header">
+        			<h1>{block:ShowTitle}{Title}{/block:ShowTitle}</h1>
+        			<figure class="full-cover" style="background:url('{HeaderImage}');">
+          			<h2>{block:PostNotes}<a href="{Permalink}">{NoteCountWithLabel}</a>{/block:PostNotes}</h2>
+        			</figure>
+      			</div>
+
+					<article class=" ">
+        <div class="body">
+          {{ entry.articleBody }}
+        </span>
+      </article>
+    </section>
+
+      </article>
+    </section>
+  </main>
+
+  /********** */
+
+				<section>
+					<div class="{block:IndexPage}{block:IfGridLayout}masonry{/block:IfGridLayout}{/block:IndexPage}">
+					{block:Posts}
+						<article class="entry {block:PermalinkPage}single{/block:PermalinkPage} {PostType}-entry post-{PostID} {TagsAsClasses}">
+<!--------------------------------------      							-->
+							{block:Text}
+								<header>
+									{block:Title}
+									<h1><a href="{Permalink}">{Title}</a></h1>
+									{/block:Title}
+								</header>
+								<div>{Body}</div>
+							{/block:Text}
+<!--------------------------------------      							-->
+							{block:Photo}
+								<figure>
+									<a href="{Permalink}">
+										<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+									</a>
+									{block:Caption}
+										<figcaption>
+											{Caption}
+										</figcaption>
+									{/block:Caption}
+								</figure>
+							{/block:Photo}
+<!--------------------------------------      							-->
+							{block:Panorama}
+								{LinkOpenTag}
+									<figure>
+										<a href="{Permalink}">
+											<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+										</a>
+										{block:Caption}
+										<figcaption>
+											{Caption}
+										</figcaption>
+										{/block:Caption}
+									</figure>
+								{LinkCloseTag}
+							{/block:Panorama}
+<!--------------------------------------      							-->
+							{block:Photoset}
+								<figure>
+									<a href="{Permalink}">
+										{Photoset-700}
+									</a>
+									{block:Caption}
+									<figcaption>
+										{Caption}
+									</figcaption>
+									{/block:Caption}
+								</figure>
+							{/block:Photoset}
+<!--------------------------------------      							-->
+							{block:Quote}
+								<blockquote>
+									<p>"{Quote}"</p>
+									{block:Source}
+									<cite>{Source}</cite>
+									{/block:Source}
+								</blockquote>
+							{/block:Quote}
+<!--------------------------------------      							-->
+							{block:Link}
+								<a href="{URL}" {Target}>
+									<h1>{Name}</h1>
+									{block:Host}
+										<p>{Host}</p>
+									{/block:Host}
+								</a>
+								{block:Description}
+									<div>{Description}</div>
+								{/block:Description}
+							{/block:Link}
+<!--------------------------------------      							-->
+							{block:Chat}
+								<header>
+									{block:Title}
+										<h1><a href="{Permalink}">{Title}</a></h1>
+									{/block:Title}
+								</header>
+								<div class="Article-body">
+									{block:Lines}
+										<p class="User User-{UserNumber}">
+											{block:Label}
+												<span class="label">{Label}</span>
+											{/block:Label}{Line}
+										</p>
+									{/block:Lines}
+								</div>
+							{/block:Chat}
+<!--------------------------------------      							-->
+							{block:Video}
+								<figure>
+									<div>
+										{Video-500}
+									</div>
+									{block:Caption}
+										<figcaption>
+											{Caption}
+										</figcaption>
+									{/block:Caption}
+								</figure>
+							{/block:Video}
+<!--------------------------------------      							-->
+							{block:Audio}
+								<figure>
+									<div>
+										{block:AlbumArt}
+											<img src="{AlbumArtURL}" alt="">
+										{/block:AlbumArt}
+									</div>
+									{block:Caption}
+										<figcaption>
+											{Caption}
+										</figcaption>
+									{/block:Caption}
+								</figure>
+								<div>
+									{AudioPlayerBlack}
+								</div>
+							{/block:Audio}
+<!--------------------------------------      							-->
+							{block:IfNotShowFooter}{/block:IfNotShowFooter}
+							{block:IfShowArticleFooter}
+								<footer>
+								{block:Date}
+									<time><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}</a></time>
+								{/block:Date}
+								{block:IfShowTags}
+									{block:HasTags}
+										<div>
+											{block:Tags}
+												<a class="Tag" rel="tag" href="{TagURL}" title="{lang:Posts tagged Tag}">{Tag}</a>
+											{/block:Tags}
+										</div>
+									{/block:HasTags}
+								{/block:IfShowTags}
+								{block:IfShowSocial}
+									<div>
+										<span>
+											<a title="Share to Facebook" href="https://www.facebook.com/sharer.php?u={Permalink}">Facebook</a>
+										</span>
+										<span>
+											<a title="Tweet" href="https://twitter.com/intent/tweet?url={Permalink}" target="_blank">Twitter</a>
+										</span>
+										<span>
+											{ReblogButton color="grey" size="16"}
+										</span>
+										<span>
+											{LikeButton color="grey" size="16"}
+										</span>
+										<span>
+											<a href="{ShortURL}">Post URL</a>
+										</span>
+										<span>
+											<a href="{EmbedUrl}">Embed URL</a>
+										</span>
+									</div>
+									{block:RebloggedFrom}
+										<div>
+											<p>Via:<a href="{ReblogParentURL}" title="{ReblogRootTitle}">{ReblogRootName}</a></p>
+											<p>Source:<a href="{ReblogRootURL}" title="{ReblogRootTitle}">{ReblogRootName}</a></p>
+										</div>
+									{/block:RebloggedFrom}
+								{/block:IfShowSocial}
+							</footer>
+							{/block:IfShowArticleFooter}
+						</article>
+					{/block:Posts}
+				</div>
+			</section>
+			{block:IfShowFollowing}
+				{block:HomePage}
+					<section>
+						{block:Following}
+							<h2>Following</h2>
+							<div>
+								{block:Followed}
+									<article>
+										<a href="{FollowedURL}">
+											<img src="{FollowedPortraitURL-64}">
+											<p>{FollowedName}</p>
+										</a>
+									</article>
+								{/block:Followed}
+							</div>
+						{/block:Following}
+					</section>
+				{/block:HomePage}
+			{/block:IfShowFollowing}
+			<footer>
+				<nav class="pagination" role="navigation">
+					{block:IndexPage}
+						<div>
+							{block:PreviousPage}
+								<a class="prev" href="{PreviousPage}">&#171; Previous</a>
+							{/block:PreviousPage}
+							{block:NextPage}
+								<a class="next" href="{NextPage}">Next &#187;</a>
+							{/block:NextPage}
+						</div>
+					{/block:IndexPage}
+					{block:PermalinkPage}
+						{block:PermalinkPagination}
+							<div>
+								{block:NextPost}
+									<a href="{NextPost}">&#171; Previous</a>
+								{/block:NextPost}
+								{block:PreviousPost}
+									<a href="{PreviousPost}">Next &#187;</a>
+								{/block:PreviousPost}
+							</div>
+						{/block:PermalinkPagination}
+					{/block:PermalinkPage}
+				</nav>
+				<div>- {Title} / {CopyrightYears} (<a href="https://tumblr.internet4000.com">credits</a>) -</div>
+			</footer>
+		</main>
+		<div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+			<script src="https://static.tumblr.com/qdi9m50/E00mzqyrr/jquery.infinitescroll.min.js"></script>
+			<script src="https://static.tumblr.com/qdi9m50/Jc8n0ith2/imagesloaded.pkgd.min.js"></script>
+			<script src="https://static.tumblr.com/qdi9m50/XbBn0g0nw/masonry.pkgd.min.js"></script>
+			<script>
+				var TumblrStarterTheme = function() {
+					this.init();
+				};
+				TumblrStarterTheme.prototype = {
+					// global variables
+					$siteMain: null,
+					$masonryContainer: $('.masonry'),
+					init: function() {
+						// console.log('init - running');
+						// on dom ready save the var
+						var self = this;
+						this.$siteMain = $('#SiteMain');
+						// run imgLoaded then Masonry if Articles has class 'Masonry'
+						if (this.$masonryContainer.hasClass('masonry')) {
+							this.$siteMain.imagesLoaded().done( function( instance ) {
+								// console.log("images loaded - running");
+								self.masonry();
+							});
+						}
+						// run infinite scrolling anyway
+						this.infiniteScrolling();
+					},
+					masonry: function() {
+						// console.log('masonry - running');
+						this.$masonryContainer
+								.prepend('<div class="Masonry-gridSizer"></div><div class="Masonry-gutterSizer"></div>')
+								.masonry({
+									columnWidth: '{Column Width}',
+									gutter: '{Gutter Width}',
+									itemSelector: '.entry',
+									transitionDuration: '100ms',
+									bufferPx: 300, // trigger 'next' earlier
+								}).addClass('is-active');
+					},
+					infiniteScrolling: function() {
+						// console.log('infinite scrolling - running');
+						var self = this;
+						this.$siteMain.infinitescroll({
+							navSelector	 : ".pagination", // selector for the paged navigation (it will be hidden)
+							nextSelector : ".next", // selector for the NEXT link (to page 2)
+							itemSelector : ".entry", // selector for all items you'll <retrieve></retrieve>
+							debug : false, // enable debug messaging
+							loadingText : "", // text accompanying loading image
+							img: "null"
+						}, function( newElements ) {
+							// callback to include new masonry items
+							if (self.$masonryContainer.hasClass('masonry')) {
+								// call imagesLoaded first
+								var $newElems = $( newElements ).addClass('is-hidden');
+								self.$siteMain.imagesLoaded().done( function( instance ) {
+									// console.log('masonry callback - running');
+									// trigger Masonry
+									self.$masonryContainer.append($newElems).masonry('appended', $newElems);
+									$newElems.removeClass('is-hidden');
+								});
+							}
+						});
+					}
+				};
+				// Create a new instance of TumblrStarterTheme app and launches TumblrStarterTheme.init
+				$(document).ready(function() {
+					var tumblrStarterTheme = new TumblrStarterTheme();
+				});
+			</script>
+		{block:IfGoogleAnalyticsID}
+				<script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{var pageTracker=_gat._getTracker("{text:Google Analytics ID}");pageTracker._trackPageview()}catch(err){}</script>
+		{block:IfGoogleAnalyticsID}
+			{block:IfDisqusShortname}
+				<script type="text/javascript">
+					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+					var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+				</script>
+			{/block:IfDisqusShortname}
+		</div>
+	</body>
+</html>
